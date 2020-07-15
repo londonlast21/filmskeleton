@@ -43,8 +43,11 @@
   background-color: grey;
   border: black solid;
   margin: 10px;
+  text-align: center;
   }
-
+.row {
+  text-align: center;
+}
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
