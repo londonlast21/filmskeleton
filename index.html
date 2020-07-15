@@ -13,19 +13,17 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Adding Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  <!-- Adding my js file -->
+  <script src="js/script.js"></script>
 </head>
 <body>
 
@@ -37,8 +35,8 @@
   <div class="container">
     <div class="row">
       <div class="one-half column">
-        <h4>Seen Films</h4> 
-        <div class="seenFilms">
+        <h4>Finished Films</h4> 
+        <div class="watchedFilms">
           <p>helll</p>
         </div>
       </div>
@@ -48,8 +46,8 @@
 <div class="container">
   <div class="row">
     <div class="one-half column">
-    <h4>Films to See</h2>
-      <div class="filmsToSee">
+    <h4>Books to Read</h2>
+      <div class="toWatch">
         <p>here</p>
       </div>
     </div>
@@ -59,12 +57,12 @@
 <div class="container">
   <div class="row">
     <form>
-      <h5>Enter film to add to your library</h5>
-      <input type="text" id="searchBar">
-      <input type="submit" value="submit">
+      <h5>Enter title to add to your library</h5>
+      <input type="text" value="" id="searchBar">
+      <input type="button" value="Submit" onclick="getInput()" />
     </form>
-    <div id="filmPic">
-      Film image append here
+    <div id="posterPic">
+      Cover image append here
       </div>
   </div>
 </div>
