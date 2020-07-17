@@ -61,10 +61,7 @@
   padding: 0;
 }
 
-/* make calendar float next to media div*/
-#calendar {
-  float: right;
-}
+
 
 /* stop text input breaking border*/
 input.text-input{
@@ -75,6 +72,23 @@ input.text-input{
 h5 {
   padding: 1rem;
 }
+/* styling the three day calendar*/
+#note-section-title {
+  margin-bottom: 0;
+}
+#three-days {
+  height: 45rem;
+  text-align: center;
+}
+#note-creation {
+  padding: 0;
+  display: inline-block;
+  width: 70%;
+}
+#new-note {
+  margin-bottom: 0;
+}
+
 
 /* For devices larger than 400px */
 @media (min-width: 400px) {

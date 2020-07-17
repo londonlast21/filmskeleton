@@ -30,4 +30,5 @@
 
 // clicking resource leads you to relevant Info
 
-
+// start of icon-value pairing section //
+//icons: happy, sad, angry, drinking, iphone, computer, 

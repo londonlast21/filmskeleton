@@ -19,7 +19,9 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
 
-    <!-- Adding Jquery -->
+  <!-- icon-specific css link -->
+
+  <!-- Adding Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Adding my js file -->
@@ -30,7 +32,7 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <header>
-    <h1 style="text-align:center">My Recovery Dashboard</h1>
+    <h1 style="text-align:center">My Dashboard</h1>
   </header>
 
 
@@ -111,12 +113,23 @@
   <!-- closure of media search column-->
   </div>
 
-  <!-- beginning of calendar column-->
-  <div id="calendar" class="one-half column">
-    
-    <h5>Calendar For Scheduling</h5>
-    
+  <!-- beginning of three days column-->
+  <div id="three-days" class="one-half column">
 
+    <!-- div to hold each day img-->
+    <div id="one-day"></div>
+    <div id="two-day"></div>
+    <div id="three-day"></div>
+    
+    <!-- note creator inside of the calendar div-->
+    
+    <form id="note-creation">
+      <h6 id="note-section-title">Write a Note</h6>
+      <textarea id="new-note" name="event-entry" placeholder="hello">Add text here</textarea>
+      <button class="btnEvent" id="save-new-event" type="submit">Add Note</button>
+    </form>
+    
+    <!-- end of calendar div-->
   </div>
 
 
