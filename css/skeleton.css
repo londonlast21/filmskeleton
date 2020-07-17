@@ -60,6 +60,22 @@
 #media-search {
   padding: 0;
 }
+
+/* make calendar float next to media div*/
+#calendar {
+  float: right;
+}
+
+/* stop text input breaking border*/
+input.text-input{
+  width: 90%;
+  font-size:small;
+}
+
+h5 {
+  padding: 1rem;
+}
+
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {

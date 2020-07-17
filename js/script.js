@@ -19,15 +19,15 @@
 // use localStorage to set the value [i] for each object as an object of
 // 'seenTitle[i]' and 'notSeenTitle[i]'
 
----
-user creates custom dashboard usin existing icons wh are given 
-mental health diagnosis values and media searched images from multiple apis that generate image results
+// ---
+// user creates custom dashboard usin existing icons wh are given 
+// mental health diagnosis values and media searched images from multiple apis that generate image results
 
-user can move items between columns; dashboard is saved to local Storage
+// user can move items between columns; dashboard is saved to local Storage
 
-user can drag a trigger icon to help resources GamepadButton
-resources button sends logged issue to api to return 5 specialists/resources
+// user can drag a trigger icon to help resources GamepadButton
+// resources button sends logged issue to api to return 5 specialists/resources
 
-clicking resource leads you to relevant Info
+// clicking resource leads you to relevant Info
 
 
