@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Film Bank</title>
+  <title>Trauma Recovery Bank</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -30,46 +30,133 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <header>
-    <h1 style="text-align:center">My Dashboard</h1>
+    <h1 style="text-align:center">My Recovery Dashboard</h1>
   </header>
 
+
+  <!-- container to hold working on icons-->
   <div class="container">
     <div class="row">
       <div class="one-half column">
-        <h4>Finished Films</h4> 
-        <div class="watchedFilms">
-          <p>helll</p>
+        <h4>Working On:</h4> 
+        <div class="working-on">
+          <p>append working on cards here</p>
         </div>
       </div>
     
 
 
-<!-- container for films to see -->
+<!-- container for  my triggers-->
 
   <div class="row">
     <div class="one-half column">
-    <h4>Films to Watch</h2>
-      <div class="toWatch">
-        <p>here</p>
+    <h4>My Triggers:</h4>
+      <div class="my-triggers">
+        <p>append trigger icons or media here</p>
       </div>
     </div>
   </div>
+
+<!--closure of container for working no columns-->
 </div>
 
+
+
+
+<!-- container to find appendable images-->
 <div class="container">
   <div class="row">
+
+    <!-- media searches column bank-->
+    <div id="media-search" class="one-half column">
+    <h5>Enter title to create image</h5>
+      <form id="title-entry">
+
+    <!-- form for entering films-->
     
-    <form>
-      <h5>Enter title to add to your library</h5>
-      <input type="text" value="" id="searchBar">
-      <input type="button" value="Submit" onclick="getInput()" />
-    </form>
-      <div id="posterPic">
-      Cover image append here
+      <div class="film-title-form">  
+        <input type="text" name="film-title-text-entry" class="text-input" placeholder="Enter text here" />
+        <button class="btn" id="save-film-title" type="submit">Add Film</button>
+      </div>  
+    
+    
+    <!--form for entering comics-->
+    
+      <div class="comic-title-form">
+        <input type="text" name="comic-title-text-entry" class="text-input" placeholder="Enter text here" />
+        <button class="btn2" id="save-comic-title" type="submit">Add Comic</button>
       </div>
     
+
+    <!-- form for entering albums-->
+    
+      <div class="album-title-form">
+        <input type="text" name="album-title-text-entry" class="text-input" placeholder="Enter text here" />
+        <button class="btn3" id="save-album-title" type="submit">Add Album</button>
+      </div>
+    
+
+    <!-- for for entering books-->
+    
+      <div class="book-title-form">
+        <input type="text" name="book-title-text-entry" class="text-input" placeholder="Enter text here" />
+        <button class="btn4" id="save-book-title" type="submit">Add Book</button>
+      </div>
+
+    </form>
+  
+
+    <!-- div for generating the results-->
+    <div class="container">
+      <div class="row">
+        <h6>Your Search Results:</h6>
+        <div>append img here</div>
+        <div>append title here</div>
+        <div>append triggers</div>
+      </div>
+    </div>
+  <!-- closure of media search column-->
   </div>
+  
+  <!-- icon drag and dorp bank column start-->
+  <div class="twelve columns">
+    <!--start drag and drop container-->
+    <div class="container">
+      <div class="row">
+        <div class="icons-bank">
+          <p>box of icons will be here</p>
+        </div>
+      </div>
+      <!-- closure of icon bank container-->
+    </div>
+  <!-- closure drag drop column-->
+  </div>
+
+  </div>
+
+<!-- closure of container for search media form-->
 </div>
+
+<!-- container for Resources column-->
+<div class="container">
+  <div class="row">
+
+    <div class="twelve columns">
+      <h4>Find Resources</h4>
+      <p>This will be an icon where they can drag a diagnosis to generate results of nearby resouces</p>
+      <div id="get-help" class="get-help">
+        <p>results for help generate here</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- closure for resources search column-->
+</div>
+
+
+
+
 
     
   
@@ -77,4 +164,11 @@
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
+<!-- footer to mention css framework being utilized-->
+<footer id="footer">
+  
+  <p>This app built with Skeleton CSS Framework </br><img src="images/favicon.png" alt="Styled letter 'S'">
+  </p></br>
+  
+</footer>
 </html>

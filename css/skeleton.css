@@ -48,6 +48,18 @@
 .row {
   text-align: center;
 }
+#footer {
+  position:relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height: 63px;
+  font-size: 12px;
+}
+#media-search {
+  padding: 0;
+}
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
