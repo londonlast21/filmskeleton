@@ -76,7 +76,7 @@ h5 {
 #note-section-title {
   margin-bottom: 0;
 }
-#three-days {
+#seven-days-out {
   height: 45rem;
   text-align: center;
 }
@@ -87,6 +87,39 @@ h5 {
 }
 #new-note {
   margin-bottom: 0;
+  input:grid;
+}
+
+/* styling for hover effect over the icons */
+.material-icons {
+  padding: 8px;
+  margin: 5px;
+  
+}
+/* tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  
+}
+/* tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* position of tooltip text */
+  position: absolute;
+  z-index: 1;
+}
+
+/* show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 

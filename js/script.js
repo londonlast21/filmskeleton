@@ -31,4 +31,18 @@
 // clicking resource leads you to relevant Info
 
 // start of icon-value pairing section //
-//icons: happy, sad, angry, drinking, iphone, computer, 
+// mood related icons
+// icons with an id of "depression" function: cloud, sad-face, happiness:happiness,
+// anger: anger-fire,
+
+/
+
+// <!-- addiction-related icons ids-->
+// tech-addiction(android, games )addiction-alcoholism: drink-hard, smoking,
+
+// <!-- mental disorder icons ids-->
+// paranoia, 
+
+// <!-- life-related icons ids-->
+// disability, money-management:credit-card,boundaries: boundaries, exercise: running,
+// sleep: sleep, parenting: parenting, 

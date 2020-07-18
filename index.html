@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/skeleton.css">
 
   <!-- icon-specific css link -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
   <!-- Adding Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -74,31 +75,18 @@
     <h5>Enter title to create image</h5>
       <form type="search" id="title-entry">
 
-    <!-- form for entering films-->
+    <!-- form for media search-->
     
-      <div class="film-title-form">  
-        <input type="text" name="film-title-text-entry" class="text-input" placeholder="Enter text here" />
-        <button class="btn" id="save-film-title" type="submit">Add Film</button>
+      <div class="title-form">
+        <select name="dropdown" id="dropdown-bar">
+          <option value="film">--Film--</option>
+          <option value="music">--Music--</option>
+          <option value="book">--Book--</option>
+          <option value="general">--General--</option>
+        </select>  
+        <input type="text" name="title-text-entry" class="text-input" placeholder="Enter text here" />
+        <button class="btn" id="save-title" type="submit">Generate</button>
       </div>  
-    
-    
-
-    <!-- form for entering albums-->
-    
-      <div class="album-title-form">
-        <input type="text" name="album-title-text-entry" class="text-input" placeholder="Enter text here" />
-        <button class="btn2" id="save-album-title" type="submit">Add Album</button>
-      </div>
-    
-
-    <!-- for for entering books-->
-    
-      <div class="book-title-form">
-        <input type="text" name="book-title-text-entry" class="text-input" placeholder="Enter text here" />
-        <button class="btn3" id="save-book-title" type="submit">Add Book</button>
-      </div>
-
-    </form>
   
 
     <!-- div for generating the results-->
@@ -112,26 +100,29 @@
     </div>
   <!-- closure of media search column-->
   </div>
-
-  <!-- beginning of three days column-->
-  <div id="three-days" class="one-half column">
-
+    
+  <!-- beginning of seven days out column-->
+  <div id="seven-days-out" class="one-half column">
+    <h4>Your Week</h4>
     <!-- div to hold each day img-->
-    <div id="one-day"></div>
-    <div id="two-day"></div>
-    <div id="three-day"></div>
+    <div id="attach-week-days"></div>
     
-    <!-- note creator inside of the calendar div-->
-    
+    <!-- note creator inside of the calendar column container -->
+    <!-- form for note creation-->
     <form id="note-creation">
+
       <h6 id="note-section-title">Write a Note</h6>
       <textarea id="new-note" name="event-entry" placeholder="hello">Add text here</textarea>
       <button class="btnEvent" id="save-new-event" type="submit">Add Note</button>
-    </form>
     
-    <!-- end of calendar div-->
+    </form>
+
+
+    <!-- end of seven days out column -->
   </div>
 
+
+ 
 
   
   <!-- icon drag and dorp bank column start-->
@@ -141,6 +132,83 @@
       <div class="row">
         <div class="icons-bank">
           <p>box of icons will be here</p>
+
+          <!-- mood-related icons-->
+          <div class="tooltip">
+            <i id="depression" name="cloud" class="material-icons" style="font-size:48px;">cloud</i>
+            <span class="tooltiptext">Depression</span>
+          </div>
+          <div class="tooltip">
+            <i id="depression" name="sad-face" class="material-icons" style="font-size:48px;">mood_bad</i>
+            <span class="tooltiptext">Depression</span>
+          </div>
+          <div class="tooltip">
+            <i id="happiness" name="happy-face" class="material-icons" style="font-size:48px;">insert_emoticon</i>
+            <span class="tooltiptext">Happiness</span>
+          </div>
+          <div class="tooltip">
+          <i id="anger" name="anger-fire" class="material-icons" style="font-size:48px;">whatshot</i>
+          <span class="tooltiptext">Anger</span>
+          </div>
+
+          
+
+          <!-- addiction-related icons-->
+          <div class="tooltip">
+            <i id="tech-addiction" name="android" class="material-icons" style="font-size:48px;">android</i>
+            <span class="tooltiptext">Teach Addiction</span>
+          </div>
+          <div class="tooltip">
+            <i id="tech-addiction" name="games" class="material-icons" style="font-size:48px;">games</i>
+            <span class="tooltiptext">Tech Addiction</span>
+          </div>
+          <div class="tooltip">
+            <i id="addiction-alcoholism" name="drink-hard" class="material-icons" style="font-size:48px;">local_bar</i>
+            <span class="tooltiptext">Addiction/Alcoholism</span>
+          </div>
+          <div class="tooltip">
+            <i id="addiction-alcoholism" name="smoking" class="material-icons" style="font-size:48px;">smoking_rooms</i>
+            <span class="tooltiptext">Addiction/Alcoholism</span>
+          </div>
+
+          <!-- mental disorder icons-->
+          <div class="tooltip">
+            <i id="paranoia" name="paranoia" class="material-icons" style="font-size:48px;">visibility</i>
+            <span class="tooltiptext">Paranoia</span>
+          </div>
+          <div class="tooltip">
+            <i id="eating-disorders" name="eating-disorder" class="material-icons" style="font-size:48px;"></i>
+          </div>
+
+          <!-- life-related icons-->
+          <div class="tooltip">
+            <i id="money-management" name="credit-card" class="material-icons" style="font-size:48px;">credit_card</i>
+            <span class="tooltiptext">Money Management</span>
+          </div>
+          <div class="tooltip">
+            <i id="disability" name="disability" class="material-icons" style="font-size:48px;">accessible</i>
+            <span class="tooltiptext">Disability/Ableism</span>
+          </div>
+          <div class="tooltip">
+            <i id="boundaries" name="boundaries" class="material-icons" style="font-size:48px;">block</i>
+            <span class="tooltiptext">Boundaries</span>
+          </div>
+          <div class="tooltip">
+            <i id="exercise" name="running" class="material-icons" style="font-size:48px;">directions_run</i>
+            <span class="tooltiptext">Exercise</span>
+          </div>
+          <div class="tooltip">
+            <i id="sleep" name="sleep" class="material-icons" style="font-size:48px;">hotel</i>
+            <span class="tooltiptext">Sleep</span>
+          </div>
+          <div class="tooltip">
+            <i id="parenting" name="parenting" class="material-icons" style="font-size:48px;">child_friendly</i>
+            <span class="tooltiptext">Parenting</span>
+          </div>
+          
+          
+        
+        
         </div>
       </div>
       <!-- closure of icon bank container-->
