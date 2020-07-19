@@ -41,7 +41,7 @@
 // tech-addiction(android, games )addiction-alcoholism: drink-hard, smoking,
 
 // <!-- mental disorder icons ids-->
-// paranoia, 
+// paranoia, eating-disorders, 
 
 // <!-- life-related icons ids-->
 // disability, money-management:credit-card,boundaries: boundaries, exercise: running,
