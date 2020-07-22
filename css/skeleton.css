@@ -64,9 +64,14 @@
 
 /* styling column widths */
 .twelve-columns {
-  width: 50%;
+  width: 30%;
+  
 }
 
+/* styling resource section */
+#anchor {
+  font-size: 90px;
+}
 
 
 /* stop text input breaking border*/
