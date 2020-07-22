@@ -2,13 +2,16 @@ var easyInput = "";
 var mediaType ="";
 
 
+
 // api call to generate image
 var getMedia = new function(){
+
+    // use the user input values of mediaType & easyInput
 
     if mediaType === film {
     
     // send input to get JSON response
-    GET https://api.themoviedb.org/3/movie//images?api_key= +  + &language=en-US
+    GET https://api.themoviedb.org/3/movie//images?api_key= + apikey + &language=en-US
 
 
     // function to create note card based on user input
@@ -17,28 +20,28 @@ var getMedia = new function(){
     document.getElementById('titleImage').appendChild(img);
 
     }
-    // if book is selected, run library API call
-    else if mediaType === book {
+    // // if book is selected, run library API call
+    // else if mediaType === book {
 
-        // library api call
+    //     // library api call
 
-        // function to create book card
-        var book[i] = document.createElement('img');
-        book[i].className = "titleCard";
-        document.getElementById('titleImage').appendChild(img);
+    //     // function to create book card
+    //     var book[i] = document.createElement('img');
+    //     book[i].className = "titleCard";
+    //     document.getElementById('titleImage').appendChild(img);
 
-    }
-    // if general is selected run api call to image search
-    else if mediaType === general {
+    // }
+    // // if general is selected run api call to image search
+    // else if mediaType === general {
 
-        // general image api call
+    //     // general image api call
 
-        // function to create general card
-        var general[i] = document.createElement('img');
-        general[i].className = "titleCard";
-        document.getElementById('titleImage').appendChild(img);
+    //     // function to create general card
+    //     var general[i] = document.createElement('img');
+    //     general[i].className = "titleCard";
+    //     document.getElementById('titleImage').appendChild(img);
 
-    }
+    // }
 
 };
 
