@@ -61,42 +61,12 @@
   </div>
 
 <!--closure of container for working on columns-->
+  </div>
 </div>
-
 
 <div class="twelve-columns">
   
-    <!-- media searches column bank-->
-    <div id="media-search" class="one-half column">
-      <h5>Enter title to create image</h5>
-        <form type="search" id="title-entry">
-  
-      <!-- form for media search-->
-      
-        <div class="title-form">
-          <select name="dropdown" id="dropdown-bar">
-            <option value="film">--Film--</option>
-            <option value="music">--Music--</option>
-            <option value="book">--Book--</option>
-            <option value="general">--General--</option>
-          </select>  
-          <input type="text" name="title-text-entry" class="text-input" placeholder="Enter text here" />
-          <button class="btn" id="save-title" type="submit" onclick="getInput()">Generate</button>
-        </div>  
-    
-  
-      <!-- div for generating the results-->
-      <div class="container">
-        <div class="row">
-          <h6>Your Search Results:</h6>
-          <div>append img here</div>
-          <div>append title here</div>
-          <div>append triggers</div>
-        </div>
-      </div>
-    <!-- closure of media search column-->
-    </div>
-  <!--start drag and drop container-->
+   <!--start drag and drop icons container-->
   <div class="container">
     <div class="row">
       
@@ -185,7 +155,43 @@
   </div>
 <!-- closure drag drop column-->
 </div>
-<!-- icon drag and dorp bank column start-->
+
+<div class="container">
+  <div class="row">
+
+ <!-- media searches column bank-->
+ <div id="media-search" class="one-half column">
+  <h5>Enter title to create image</h5>
+    <form type="search" id="title-entry">
+
+  <!-- form for media search-->
+  
+    <div class="title-form">
+      <select name="dropdown" id="dropdown-bar">
+        <option value="film">--Film--</option>
+        <option value="book">--Book--</option>
+        <option value="general">--General--</option>
+      </select>  
+      <input type="text" name="title-text-entry" class="text-input" placeholder="Enter text here" />
+      <button class="btn" id="getInput" type="button">Generate</button>
+    </div>  
+
+
+  <!-- div for generating the results-->
+  <div class="container">
+    <div class="row">
+      <h6>Your Search Results:</h6>
+      <div>append img here</div>
+      <div>append title here</div>
+      <div>append triggers</div>
+    </div>
+  </div>
+<!-- closure of media search column-->
+</div>
+</div>
+</div>
+
+
 
 <!-- container to find appendable images-->
 <div class="container">
