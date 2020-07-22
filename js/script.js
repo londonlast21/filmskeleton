@@ -1,6 +1,7 @@
 
 // function to capture the input from the searchBar
-var getInput = function(event) {
+// when onClick
+function getInput = function(event) {
     //set input to the value of text entered
     var input = document.getElementById('searchBar').value;
     // make entered text all lowercase
@@ -9,5 +10,13 @@ var getInput = function(event) {
     // test what value is being used
     console.log(easyInput);
 
-    // send input to api call
+    // capture the type of category selected
+    var dropDown = document.getElementById('dropdown-bar');
+    var mediaType = dropDown.options[dropDown.selectedIndex].text;
+
+    // test what value is being used
+    console.log(mediaType);
+
+    // send easyInput and mediaType to api call
+
 };
