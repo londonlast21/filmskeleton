@@ -45,4 +45,7 @@
 
 // <!-- life-related icons ids-->
 // disability, money-management:credit-card,boundaries: boundaries, exercise: running,
-// sleep: sleep, parenting: parenting, 
+// sleep: sleep, parenting: parenting,
+
+// if i give all icons links: is it possible to run their links ONLY on dragging them to the magnifying glass?
+// or if not: run the href link to for whatever i give that variable as a link in their category?

@@ -59,6 +59,12 @@
 }
 #media-search {
   padding: 0;
+  float: right;
+}
+
+/* styling column widths */
+.twelve-columns {
+  width: 50%;
 }
 
 
@@ -88,6 +94,9 @@ h5 {
 #new-note {
   margin-bottom: 0;
   input:grid;
+}
+#seven-days-out {
+  width: 100%;
 }
 
 /* styling for hover effect over the icons */
