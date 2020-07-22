@@ -69,6 +69,9 @@
       <div id="icons-bank" class="one-half column">
         <h4>Trigger Icons</h4>
 
+        <!-- container for wrapping icons bank-->
+        <div class="container">
+
         <!-- mood-related icons-->
         <div class="tooltip">
           <i id="depression" name="cloud" class="material-icons" style="font-size:48px;">cloud</i>
@@ -149,6 +152,8 @@
     </div>
     <!-- closure of icon bank container-->
   </div>
+  <!-- closure of icons bank wrapper-->
+  </div>
 <!-- closure drag drop column-->
 </div>
 
@@ -213,8 +218,6 @@
   <!-- beginning of seven days out column-->
   <div id="seven-days-out" class="one-half column">
     <h4>Your Week</h4>
-    <!-- div to hold each day img-->
-    <div id="attach-week-days"></div>
     
     <!-- note creator inside of the calendar column container -->
     <!-- form for note creation-->
@@ -222,34 +225,52 @@
 
       <h6 id="note-section-title">Write a Note</h6>
       <textarea id="new-note" name="event-entry" placeholder="hello">Add text here</textarea>
-      <button class="btnEvent" id="save-new-event" type="submit">Add Note</button>
+      <button class="btnEvent" id="save-new-event" type="button">Add Note</button>
     
-    </form>
+    </form> 
+    <!-- end note form-->
 
+    <!-- area for note to be generated-->
+    <div class="myNote">
+      <p>spot for note generation</p>
+    </div>
 
+  </br>
+
+    <!-- week day boxes start -->
+      <div class="weekContainer">
+        <div class="scheduleDay">
+          <h6>Monday</h6>
+        </div>
+
+        <div class="scheduleDay">
+          <h6>Tuesday</h6>
+        </div>
+
+        <div class="scheduleDay">
+          <h6>Wednesday</h6>
+        </div>
+
+        <div class="scheduleDay">
+          <h6>Thursday</h6>
+        </div>
+
+        <div class="scheduleDay">
+          <h6>Friday</h6>
+        </div>
+
+        <div class="scheduleDay">
+          <h6>Saturday</h6>
+        </div>
+
+        <div class="scheduleDay">
+          <h6>Sunday</h6>
+        </div>
+        <!--weekday boxes end-->
+      </div>
+    
     <!-- end of seven days out column -->
   </div>
-
-
- 
-
-  
-  
-
-<!-- closure of container for search media form-->
-</div>
-
-
-
-<!-- container for Resources column-->
-
-
-
-
-
-
-    
-  
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

@@ -34,7 +34,8 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
-  box-sizing: border-box; }
+  box-sizing: border-box; 
+  text-align: center; }
 .column,
 .columns {
   width: 100%;
@@ -98,17 +99,27 @@ h5 {
 }
 #new-note {
   margin-bottom: 0;
-  input:grid;
+  align-items:flex;
 }
 #seven-days-out {
   width: 100%;
+}
+
+.scheduleDay {
+  background-color: blue;
+  display: inline-flex;
+  margin: 3px;
+  height: 150px;
+  width: 120px;
+  text-align: center;
+
 }
 
 /* styling for hover effect over the icons */
 .material-icons {
   padding: 8px;
   margin: 5px;
-  
+  width: 20px;
 }
 /* tooltip container */
 .tooltip {
@@ -137,6 +148,11 @@ h5 {
 }
 
 /* styling for icon bank */
+#icons-bank {
+  justify-content: center;
+  background-color:lightskyblue;
+
+}
 
 
 /* For devices larger than 400px */
