@@ -1,28 +1,47 @@
-// // api call to generate image
-// var getMedia = function(){
+var easyInput = "";
+var mediaType ="";
 
-// };
 
-// // function to create note card based on user input
-// if mediaType = film {
+// api call to generate image
+var getMedia = new function(){
 
-// }
-
-// // function
-// else if mediaType = book {
-
-// }
-// // function
-
-// else if mediaType = general {
-
-// }
-
-// else {
-//     // generate prompt 'select category'
+    if mediaType === film {
     
+    // send input to get JSON response
+    GET https://api.themoviedb.org/3/movie//images?api_key= + b8918a77ef3da9c62a4dc045d9aa28ee + &language=en-US
 
-// }
+
+    // function to create note card based on user input
+    var movie[i] = document.createElement('img');
+    movie[i].className = "titleCard";
+    document.getElementById('titleImage').appendChild(img);
+
+    }
+    // if book is selected, run library API call
+    else if mediaType === book {
+
+        // library api call
+
+        // function to create book card
+        var book[i] = document.createElement('img');
+        book[i].className = "titleCard";
+        document.getElementById('titleImage').appendChild(img);
+
+    }
+    // if general is selected run api call to image search
+    else if mediaType === general {
+
+        // general image api call
+
+        // function to create general card
+        var general[i] = document.createElement('img');
+        general[i].className = "titleCard";
+        document.getElementById('titleImage').appendChild(img);
+
+    }
+
+};
+
 
 //--------------//
 
@@ -32,6 +51,8 @@
 
 
 // function to run an icon's html on drag to anchor
+
+
 
 
 
@@ -60,7 +81,7 @@ var getTitleInfo = function(event) {
     document.getElementById('titleSearch').value = "";
 
     // send these values to the api calls
-    //getMedia(easyInput, mediaType);
+    getMedia(easyInput, mediaType);
 }
 
 // var to get note input
