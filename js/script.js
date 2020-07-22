@@ -8,7 +8,7 @@ var getMedia = new function(){
     if mediaType === film {
     
     // send input to get JSON response
-    GET https://api.themoviedb.org/3/movie//images?api_key= + b8918a77ef3da9c62a4dc045d9aa28ee + &language=en-US
+    GET https://api.themoviedb.org/3/movie//images?api_key= +  + &language=en-US
 
 
     // function to create note card based on user input
