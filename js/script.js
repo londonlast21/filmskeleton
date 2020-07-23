@@ -1,6 +1,7 @@
 var easyInput = "";
 var mediaType ="";
 var apikey = "b8918a77ef3da9c62a4dc045d9aa28ee";
+var apikey2 = "17609511-a8b61b70dbfc9bcb99ef972fb";
 
 
 
@@ -32,15 +33,15 @@ var getMedia = function(easyInput, mediaType){
 
     });}
     else if (mediaType === "Book"){
-    
-        var url = "https://www.googleapis.com/books/v1/volumes?q=" + easyInput;
+        // API call to google Books api
+       var url = "https://www.googleapis.com/books/v1/volumes?q=" + easyInput;
 
         fetch (url)
         .then(response => response.json())
         .then(function(data) {
             console.log(data);
 
-            // function
+            // function to create img
             var book = document.createElement('img');
             book.className = "titleCard";
             book.setAttribute("src", data.items[0].volumeInfo.imageLinks.thumbnail);
@@ -49,42 +50,37 @@ var getMedia = function(easyInput, mediaType){
 
     } else if (mediaType === "General"){
 
+        var url = "https://pixabay.com/api/?key=" + apikey2 + "&q=" + easyInput + "&image_type=photo";
 
-  
+        fetch (url)
+        .then(response => response.json())
+        .then(function(data){
+            console.log(data);
 
-
-
-    
+            // // function to create img
+            var general = document.createElement('img');
+            general.className = "titleCard";
+            general.setAttribute("src", data.hits[0].largeImageURL);
+            document.getElementById('titleImage').appendChild(general);
+        })
     }
-    // // if book is selected, run library API call
-    // else if mediaType === book {
-
-    //     // library api call
-
-    //     // function to create book card
-    //     var book[i] = document.createElement('img');
-    //     book[i].className = "titleCard";
-    //     document.getElementById('titleImage').appendChild(img);
-
-    // }
-    // // if general is selected run api call to image search
-    // else if mediaType === general {
-
-    //     // general image api call
-
-    //     // function to create general card
-    //     var general[i] = document.createElement('img');
-    //     general[i].className = "titleCard";
-    //     document.getElementById('titleImage').appendChild(img);
-
-    // }
-
 };
-
-
 //--------------//
 
-// function to create note based on user note input
+// write note using user input
+var getNote = function(noteInput){
+    console.log("hello")
+};
+
+// get value for links based on icon's class
+
+// when icon is dropped, set value to class
+//var setIconValue = document.get
+
+// function to generate links based on set class value for icon
+
+
+
 
 
 
@@ -96,6 +92,9 @@ var getMedia = function(easyInput, mediaType){
 // function to set localStorage for trigger column
 // function to set localStorage for weekly thing
 // function to restore localStorage for all on page refresh
+
+
+
 
 
 // var to get media input
@@ -132,6 +131,7 @@ var getNoteInfo = function(event) {
     var noteInput = document.getElementById('new-note').value = "";
     
     // use note input to generate note card
+    getNote(noteInput);
 
 
 }
