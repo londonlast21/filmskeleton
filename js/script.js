@@ -1,7 +1,5 @@
 var easyInput = "";
 var mediaType ="";
-var apikey = "b8918a77ef3da9c62a4dc045d9aa28ee";
-var apikey2 = "17609511-a8b61b70dbfc9bcb99ef972fb";
 
 
 
