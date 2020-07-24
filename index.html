@@ -71,8 +71,8 @@
         <!-- container for wrapping icons bank-->
         <div class="container">
         <!-- mood-related icons-->
-        <div class="tooltip">
-          <i id="depression" name="cloud" class="material-icons" style="font-size:48px;">cloud</i>
+        <div class="tooltip" draggable="true">
+          <i id="depression" name="cloud" class="material-icons" style="font-size:48px" draggable="true">cloud</i>
           <span class="tooltiptext">Depression</span>
         </div>
         <div class="tooltip">
@@ -134,7 +134,7 @@
           <span class="tooltiptext">Sleep</span>
         </div>
         <div class="tooltip">
-          <i id="parenting" name="parenting" class="material-icons" style="font-size:48px;">child_friendly</i>
+          <i draggable="true" id="parenting" name="parenting" class="material-icons" style="font-size:48px;">child_friendly</i>
           <span class="tooltiptext">Parenting</span>
         </div>
       </div>
@@ -181,14 +181,9 @@
 
 
 
-<!-- container to find appendable images-->
-<div class="container">
-  <div class="row">
-
-
+<!-- container to find resources-->
   <div class="container">
     <div class="row">
-  
       <div class="twelve columns">
         <h4>Find Resources</h4>
         <i id="getHelp" name="get-help" class="material-icons" style="font-size:90px;">anchor</i>
@@ -196,67 +191,67 @@
           <p>results for help generate here</p>
         </div>
       </div>
-  
     </div>
-  
     <!-- closure for resources search column-->
   </div>
+
+  <div class="container">
+    <div class="row"> 
+    <!-- beginning of seven days out column-->
+      <div id="seven-days-out" class="one-half column">
+        <h4>Your Week</h4>
     
-  <!-- beginning of seven days out column-->
-  <div id="seven-days-out" class="one-half column">
-    <h4>Your Week</h4>
-    
-    <!-- note creator inside of the calendar column container -->
-    <!-- form for note creation-->
-    <form id="note-creation">
+        <!-- note creator inside of the calendar column container -->
+        
+        <!-- form for note creation-->
+        <h6 id="note-section-title">Write a Note</h6>
+        <form id="note-creation">
+        <textarea id="newNote" name="eventEntry" placeholder="hello">Add text here</textarea>
+        <button class="btnEvent" id="saveNewEvent" type="button">Add Note</button>
+        </form> 
+        <!-- end note form-->
 
-      <h6 id="note-section-title">Write a Note</h6>
-      <textarea id="new-note" name="event-entry" placeholder="hello">Add text here</textarea>
-      <button class="btnEvent" id="save-new-event" type="button">Add Note</button>
-    
-    </form> 
-    <!-- end note form-->
-
-    <!-- area for note to be generated-->
-    <div class="myNote">
-      <p>spot for note generation</p>
-    </div>
-
-  </br>
-
-    <!-- week day boxes start -->
-      <div class="weekContainer">
-        <div class="scheduleDay">
-          <p>Monday</p>
+        <!-- area for note to be generated-->
+        <div class="myNote">
+        <p>spot for note generation</p>
         </div>
 
-        <div class="scheduleDay">
-          <p>Tuesday</p>
-        </div>
+        </br>
 
-        <div class="scheduleDay">
-          <p>Wednesday</p>
-        </div>
+        <!-- week day boxes start -->
+        <div class="weekContainer">
+          <div class="scheduleDay">
+            <p>Monday</p>
+          </div>
 
-        <div class="scheduleDay">
-          <p>Thursday</p>
-        </div>
+          <div class="scheduleDay">
+            <p>Tuesday</p>
+          </div>
 
-        <div class="scheduleDay">
-          <p>Friday</p>
-        </div>
+          <div class="scheduleDay">
+            <p>Wednesday</p>
+          </div>
 
-        <div class="scheduleDay">
-          <p>Saturday</p>
-        </div>
+          <div class="scheduleDay">
+            <p>Thursday</p>
+          </div>
 
-        <div class="scheduleDay">
-          <p>Sunday</p>
-        </div>
+          <div class="scheduleDay">
+            <p>Friday</p>
+          </div>
+
+          <div class="scheduleDay">
+            <p>Saturday</p>
+          </div>
+
+          <div class="scheduleDay">
+            <p>Sunday</p>
+          </div>
         <!--weekday boxes end-->
+        </div>
+      <!-- end of seven days out column -->
       </div>
-    
-    <!-- end of seven days out column -->
+    </div>
   </div>
 
 <!-- End Document

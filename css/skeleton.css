@@ -181,6 +181,9 @@ h5 {
   
 }
 
+/* styling to make icons draggable */
+
+
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {

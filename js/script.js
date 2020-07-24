@@ -69,7 +69,10 @@ var getMedia = function(easyInput, mediaType){
 
 // write note using user input
 var getNote = function(noteInput){
-    console.log("hello")
+    console.log("hello");
+
+    // clear old results
+    document.getElementById(newNote).innerHTML = "";
 };
 
 // get value for links based on icon's class
