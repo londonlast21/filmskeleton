@@ -169,9 +169,11 @@ h5 {
 /* styling for mediasearch returns */
 #titleImage {
   max-height: fit-content;
+  max-width: fit-content;
 }
 #media-search {
-  width: fit-content;
+  width: 40%;
+  max-width: 50%;
   height: fit-content;
 }
 
