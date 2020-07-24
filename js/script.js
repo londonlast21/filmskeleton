@@ -69,10 +69,15 @@ var getMedia = function(easyInput, mediaType){
 
 // write note using user input
 var getNote = function(noteInput){
-    console.log("hello");
+    console.log(noteInput);
 
     // clear old results
-    document.getElementById(newNote).innerHTML = "";
+    // use input to generate new note div
+    var createNewNote = document.createElement('div');
+    createNewNote.className = 'scheduleEvent';
+    createNewNote.innerHTML = noteInput;
+    document.getElementById('myNote').appendChild(createNewNote);
+    
 };
 
 // get value for links based on icon's class
@@ -125,16 +130,15 @@ var getTitleInfo = function(event) {
 var getNoteInfo = function(event) {
 
     // capture input from textarea
-    var getNote = document.getElementById('new-note').value;
+    var getNewNote = document.getElementById('newNote').value;
     // test what was captured
-    console.log(getNote);
-
+    console.log(getNewNote);
 
     // clear note input area on submission
-    var noteInput = document.getElementById('new-note').value = "";
+    var noteInput = document.getElementById('newNote').value = "";
     
     // use note input to generate note card
-    getNote(noteInput);
+    getNote(getNewNote);
 
 
 }
@@ -145,6 +149,6 @@ document.getElementById("getTitle").onclick = function (event){
     getTitleInfo();     
 }
 // onclick to get data from user's input in week div
-document.getElementById("save-new-event").onclick = function (event){
+document.getElementById("saveNewEvent").onclick = function (event){
     getNoteInfo();
 }

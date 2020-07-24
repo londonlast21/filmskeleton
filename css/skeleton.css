@@ -172,7 +172,7 @@ h5 {
   width: 100%;
 }
 #media-search {
-  width: 40%;
+  width: 45%;
   max-width: fit-content;
   height: fit-content;
 }
@@ -183,7 +183,12 @@ h5 {
 
 /* styling to make icons draggable */
 
-
+/* styling for generated notes */
+.scheduleEvent {
+  max-width: 50px;
+  max-height: 50px;
+  background-: white;
+}
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
