@@ -168,7 +168,11 @@ h5 {
 
 /* styling for mediasearch returns */
 #titleImage {
-  max-height: 50px;
+  max-height: fit-content;
+}
+#media-search {
+  width: fit-content;
+  height: fit-content;
 }
 
 /* For devices larger than 400px */
