@@ -1,11 +1,12 @@
 var easyInput = "";
 var mediaType ="";
-
-
+//api keys go here 
 
 var deleteNote = document.querySelector("delete-note");
 var editNote = document.querySelector("edit-note");
 
+// draggable
+$("#titleCard").draggable;
 // api call to generate image
 var getMedia = function(easyInput, mediaType){
 
@@ -38,7 +39,7 @@ var getMedia = function(easyInput, mediaType){
         deleteMovieBtn.className = "delete-movie";
         deleteMovieBtn.id = "deleteMovie";
 
-        document.getElementById('movie').appendChild(deleteMovieBtn);
+       // document.getElementById('movie').appendChild(deleteMovieBtn);
 
 
         document.getElementById('titleImage').appendChild(movie);
@@ -142,10 +143,6 @@ var getNote = function(noteInput){
     deleteButtonNote.addEventListener("click", deleteNoteHandler);
 };
 
-
-    
-//};
-
 // delete note function
 var deleteNoteHandler = function(event) {
     // test if its working
@@ -162,16 +159,6 @@ var editNoteHandler = function(event) {
     
 }
 
-// get value for links based on icon's class
-
-// when icon is dropped, set value to class
-//var setIconValue = document.get
-
-// function to generate links based on set class value for icon
-
-
-
-
 
 
 
@@ -185,7 +172,12 @@ var editNoteHandler = function(event) {
 
 
 
-
+// var to get resource input
+var getResourceInfo = function(event) {
+    var helpInput = document.getElementById('dropdown-bar-help').value;
+    // check to see input being logged
+    console.log(helpInput);
+}
 
 // var to get media input
 var getTitleInfo = function(event) {
@@ -207,7 +199,6 @@ var getTitleInfo = function(event) {
     // send these values to the api calls
     getMedia(easyInput, mediaType);
 }
-
 // var to get note input
 var getNoteInfo = function(event) {
     // clear out old note
@@ -226,12 +217,23 @@ var getNoteInfo = function(event) {
     
     // use note input to generate note card
     getNote(getNewNote);
-
-    
-
-
 }
 
+// makin note draggable
+var dragIcon = function onDragStart(event) {
+    event
+    .dataTransfer
+    .setData('text/plain', event.target.id);
+    console.log(dragNote);
+}
+
+
+
+
+// onclick to get resource info links
+document.getElementById("saveResource").onclick = function (event){
+    getResourceInfo();
+}
 
 /// onclick to get data user's input from script in html tag
 document.getElementById("getTitle").onclick = function (event){

@@ -206,6 +206,20 @@ h5 {
 
 /* styling to make icons draggable */
 
+/* styling for help search section */
+#getHelp {
+  display: inline;
+}
+#resourceCall {
+  display: grid;
+  justify-content: center;
+  
+}
+#newResource {
+  text-align: center;
+}
+
+
 /* styling for generated notes */
 #myNote {
   margin: 15px;
