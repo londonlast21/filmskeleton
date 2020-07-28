@@ -1,6 +1,8 @@
 var easyInput = "";
 var mediaType ="";
 
+
+
 var deleteNote = document.querySelector("delete-note");
 var editNote = document.querySelector("edit-note");
 
@@ -27,15 +29,16 @@ var getMedia = function(easyInput, mediaType){
         var movie = document.createElement('img');
         movie.draggable = true;
         movie.className = "titleCard";
-        movie.id = "movieHat";
+        movie.id = "movie";
         movie.setAttribute("src", "http://image.tmdb.org/t/p/w185/"+ data.results[0].poster_path);
+        
         // create delete button
         var deleteMovieBtn = document.createElement('button');
         deleteMovieBtn.textContent = "X";
         deleteMovieBtn.className = "delete-movie";
         deleteMovieBtn.id = "deleteMovie";
 
-        //document.getElementById('movieHat').appendChild(deleteMovieBtn);
+        document.getElementById('movie').appendChild(deleteMovieBtn);
 
 
         document.getElementById('titleImage').appendChild(movie);
@@ -120,6 +123,10 @@ var getNote = function(noteInput){
     editButtonNote.className = "edit-note";
     editButtonNote.id = "editNote";
 
+    // listen to edit note on button click
+    editButtonNote.addEventListener("click", editNoteHandler);
+
+
     createNewNote.appendChild(editButtonNote);
     // create delete button on note
     var deleteButtonNote = document.createElement('button');
@@ -136,26 +143,28 @@ var getNote = function(noteInput){
     
     
     document.getElementById('myNote').appendChild(createNewNote);
-    };
+    // listen to delete note on button click
+    deleteButtonNote.addEventListener("click", deleteNoteHandler);
+};
+
+
     
 //};
 
 // delete note function
 var deleteNoteHandler = function(event) {
+    // test if its working
     console.log(event.target);
 
-    if (event.target.matches("delete-note")) {
-        console.log("you clicked a deletebtn");
-    }
+    
 }
 
 // edit note function
 var editNoteHandler = function(event) {
+    // test if its working
     console.log(event.target);
 
-    if (event.target.matches("edit-note")) {
-        console.log("you clicked a edit btn");
-    }
+    
 }
 
 // get value for links based on icon's class
@@ -225,6 +234,8 @@ var getNoteInfo = function(event) {
     // use note input to generate note card
     getNote(getNewNote);
 
+    
+
 
 }
 
@@ -238,10 +249,7 @@ document.getElementById("saveNewEvent").onclick = function (event){
     getNoteInfo();
 }
 
-// listen to delete note on button click
-deleteNote.addEventListener("click", deleteNoteHandler);
 
-// listen to edit note on button click
-editNote.addEventListener("click", editNoteHandler);
+
 
 
