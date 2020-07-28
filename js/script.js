@@ -5,6 +5,11 @@ var mediaType ="";
 var deleteNote = document.querySelector("delete-note");
 var editNote = document.querySelector("edit-note");
 
+var noteIdCounter = 0;
+var movieIdCounter = 0;
+var bookIdCounter = 0;
+var generalIdCounter = 0;
+
 // draggable
 $("#titleCard").draggable;
 // api call to generate image
@@ -32,6 +37,8 @@ var getMedia = function(easyInput, mediaType){
         movie.className = "titleCard";
         movie.id = "movie";
         movie.setAttribute("src", "http://image.tmdb.org/t/p/w185/"+ data.results[0].poster_path);
+
+        movie.setAttribute("movie-id", movieIdCounter);
         
         // create delete button
         var deleteMovieBtn = document.createElement('button');
@@ -43,6 +50,10 @@ var getMedia = function(easyInput, mediaType){
 
 
         document.getElementById('titleImage').appendChild(movie);
+
+        movieIdCounter++;
+
+        console.log(movieId);
 
 
     });}
@@ -62,6 +73,8 @@ var getMedia = function(easyInput, mediaType){
             book.id = "book";
             book.setAttribute("src", data.items[0].volumeInfo.imageLinks.thumbnail);
 
+            book.setAttribute("book-is", bookIdCounter);
+
             // create delete button on image
             var deleteBookBtn = document.createElement('button');
             deleteBookBtn.textContent = "X";
@@ -73,6 +86,8 @@ var getMedia = function(easyInput, mediaType){
 
 
             document.getElementById('titleImage').appendChild(book);
+            
+            bookIdCounter++;
         })
 
     } else if (mediaType === "General"){
@@ -90,6 +105,7 @@ var getMedia = function(easyInput, mediaType){
             general.className = "titleCard";
             general.id = "general";
             general.setAttribute("src", data.hits[0].largeImageURL);
+            general.setAttribute("general-id", generalIdCounter);
 
             // create delete button
             var deleteGeneralBtn = document.createElement('button');
@@ -100,6 +116,7 @@ var getMedia = function(easyInput, mediaType){
             document.getElementById('deleteGeneral').appendChild(deleteGeneralBtn);
 
             document.getElementById('titleImage').appendChild(general);
+            generalIdCounter++;
         })
     }
 };
@@ -116,6 +133,8 @@ var getNote = function(noteInput){
     createNewNote.draggable = true;
     createNewNote.className = 'scheduleEvent';
     createNewNote.innerHTML = noteInput;
+
+    createNewNote.setAttribute("note-id", noteIdCounter);
     // create edit button on note
     var editButtonNote = document.createElement('button');
     editButtonNote.textContent = "Edit";
@@ -139,15 +158,18 @@ var getNote = function(noteInput){
     
     
     document.getElementById('myNote').appendChild(createNewNote);
+    noteIdOunter++;
     // listen to delete note on button click
     deleteButtonNote.addEventListener("click", deleteNoteHandler);
+
 };
 
 // delete note function
 var deleteNoteHandler = function(event) {
     // test if its working
     console.log(event.target);
-
+    var deleteId = event.target.getAttribute("data-note-id");
+    console.log(deleteId);
     
 }
 
@@ -226,6 +248,9 @@ var dragIcon = function onDragStart(event) {
     .setData('text/plain', event.target.id);
     console.log(dragNote);
 }
+
+//to delete the note
+var noteDelete = function()
 
 
 
