@@ -39,7 +39,7 @@ var getMedia = function(easyInput, mediaType){
         deleteMovieBtn.className = "delete-movie";
         deleteMovieBtn.id = "deleteMovie";
 
-       // document.getElementById('movie').appendChild(deleteMovieBtn);
+       document.getElementById('titleImage').appendChild(deleteMovieBtn);
 
 
         document.getElementById('titleImage').appendChild(movie);
