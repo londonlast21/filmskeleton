@@ -90,6 +90,7 @@ h5 {
   height: 45rem;
   text-align: center;
   height: fit-content;
+  width: 100%;
 }
 #note-creation {
   padding: 0;
@@ -99,11 +100,11 @@ h5 {
   
   
 }
-#weekSection {
+.weekSection {
   width: 100%;
 }
 .myNote {
-  width: fit-content;
+  width: 100%;
 }
 
 #new-note {
@@ -112,7 +113,6 @@ h5 {
 }
 
 .weekContainer {
-  margin: 10px;
   display: grid;
   width: 100%;
 }
@@ -121,12 +121,14 @@ h5 {
   background-color: lightskyblue;
   display: inline-flex;
   margin: 2px;
-  min-height: 150px;
-  max-height: fit-content;
-  width: fit-content;
-  text-align: center;
+  height: 150px;
+  width: 100%;
+  text-align: justify;
   border-radius: 25px;
   justify-content: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+
 }
 .scheduleDay p {
   padding: 10px;
@@ -205,11 +207,25 @@ h5 {
 /* styling to make icons draggable */
 
 /* styling for generated notes */
-.scheduleEvent {
-  max-width: 100px;
-  max-height: 100px;
-  background-color: white;
+#myNote {
+  margin: 15px;
+  padding: 10px;
 }
+.scheduleEvent {
+  width: 90%;
+  text-align: center;
+  height: 55px;
+  background-color: white;
+  margin: auto;
+
+}
+#deleteNote {
+  float: right;
+}
+#editNote {
+  float: right;
+}
+
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
@@ -575,7 +591,11 @@ there.
 @media (min-width: 400px) {}
 
 /* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
+@media (min-width: 550px) {
+  #icons-bank {
+    width:48%;
+  }
+}
 
 /* Larger than tablet */
 @media (min-width: 750px) {}
