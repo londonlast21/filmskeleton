@@ -12,6 +12,12 @@ var generalIdCounter = 0;
 
 // draggable
 $("#titleCard").draggable;
+
+
+// resource functions
+
+
+
 // api call to generate image
 var getMedia = function(easyInput, mediaType){
 
@@ -158,7 +164,7 @@ var getNote = function(noteInput){
     
     
     document.getElementById('myNote').appendChild(createNewNote);
-    noteIdOunter++;
+    noteIdCounter++;
     // listen to delete note on button click
     deleteButtonNote.addEventListener("click", deleteNoteHandler);
 
@@ -196,9 +202,30 @@ var editNoteHandler = function(event) {
 
 // var to get resource input
 var getResourceInfo = function(event) {
+    // getting the value from the zip code entry
     var helpInput = document.getElementById('dropdown-bar-help').value;
     // check to see input being logged
     console.log(helpInput);
+   
+    var zipCodeInput = document.getElementById('zipCode');
+     // reject it if it isn't five integers
+    //if {
+
+    // } else {
+    //     console.log("err");
+        
+    // }
+
+    // turn input into a string
+    
+
+
+    // check input being used
+    console.log(zipCodeInput);
+    
+
+    // send input to api call
+    //getResourceInfo(helpInput, zipCodeInput);
 }
 
 // var to get media input
@@ -250,7 +277,7 @@ var dragIcon = function onDragStart(event) {
 }
 
 //to delete the note
-var noteDelete = function()
+//var noteDelete = function()
 
 
 
