@@ -72,6 +72,7 @@
 /* styling resource section */
 #anchor {
   font-size: 90px;
+  padding-right: 90px;
 }
 
 
@@ -132,6 +133,11 @@ h5 {
   padding: 8px;
   margin: 5px;
   width: 20px;
+  
+}
+
+#myIcon {
+  position: absolute;
 }
 /* tooltip container */
 .tooltip {
@@ -180,14 +186,23 @@ h5 {
   max-width: 100%;
   
 }
+.delete-movie{
+  background-color: white;
+}
+.delete-book {
+  background-color: white;
+}
+.delete-general {
+  background-color: white;
+}
 
 /* styling to make icons draggable */
 
 /* styling for generated notes */
 .scheduleEvent {
-  max-width: 50px;
-  max-height: 50px;
-  background-: white;
+  max-width: 100px;
+  max-height: 100px;
+  background-color: white;
 }
 /* For devices larger than 400px */
 @media (min-width: 400px) {

@@ -1,6 +1,9 @@
 var easyInput = "";
 var mediaType ="";
 
+var deleteNote = document.querySelector("delete-note");
+var editNote = document.querySelector("edit-note");
+
 // api call to generate image
 var getMedia = function(easyInput, mediaType){
 
@@ -22,8 +25,19 @@ var getMedia = function(easyInput, mediaType){
 
         // function to create note card based on user input
         var movie = document.createElement('img');
+        movie.draggable = true;
         movie.className = "titleCard";
-        movie.setAttribute("src", "http://image.tmdb.org/t/p/w185/"+ data.results[0].poster_path)
+        movie.id = "movieHat";
+        movie.setAttribute("src", "http://image.tmdb.org/t/p/w185/"+ data.results[0].poster_path);
+        // create delete button
+        var deleteMovieBtn = document.createElement('button');
+        deleteMovieBtn.textContent = "X";
+        deleteMovieBtn.className = "delete-movie";
+        deleteMovieBtn.id = "deleteMovie";
+
+        //document.getElementById('movieHat').appendChild(deleteMovieBtn);
+
+
         document.getElementById('titleImage').appendChild(movie);
 
 
@@ -39,8 +53,21 @@ var getMedia = function(easyInput, mediaType){
 
             // function to create img
             var book = document.createElement('img');
+            book.draggable = true;
             book.className = "titleCard";
+            book.id = "book";
             book.setAttribute("src", data.items[0].volumeInfo.imageLinks.thumbnail);
+
+            // create delete button on image
+            var deleteBookBtn = document.createElement('button');
+            deleteBookBtn.textContent = "X";
+            deleteBookBtn.className = "delete-book";
+            deleteBookBtn.id = "deleteBook";
+            
+
+            document.getElementById('book').appendChild(deleteBookBtn);
+
+
             document.getElementById('titleImage').appendChild(book);
         })
 
@@ -55,12 +82,24 @@ var getMedia = function(easyInput, mediaType){
 
             // // function to create img
             var general = document.createElement('img');
+            general.draggable = true;
             general.className = "titleCard";
+            general.id = "general";
             general.setAttribute("src", data.hits[0].largeImageURL);
+
+            // create delete button
+            var deleteGeneralBtn = document.createElement('button');
+            deleteGeneralBtn.textContent = "X";
+            deleteGeneralBtn.className = "delete-general";
+            deleteGeneralBtn.id = "deleteGeneral";
+
+            document.getElementById('deleteGeneral').appendChild(deleteGeneralBtn);
+
             document.getElementById('titleImage').appendChild(general);
         })
     }
 };
+
 //--------------//
 
 // write note using user input
@@ -68,13 +107,56 @@ var getNote = function(noteInput){
     console.log(noteInput);
 
     // clear old results
+    // if myNote exists already in div myNote, clear it
+    //if (myNote exists){
     // use input to generate new note div
     var createNewNote = document.createElement('div');
+    createNewNote.draggable = true;
     createNewNote.className = 'scheduleEvent';
     createNewNote.innerHTML = noteInput;
-    document.getElementById('myNote').appendChild(createNewNote);
+    // create edit button on note
+    var editButtonNote = document.createElement('button');
+    editButtonNote.textContent = "Edit";
+    editButtonNote.className = "edit-note";
+    editButtonNote.id = "editNote";
+
+    createNewNote.appendChild(editButtonNote);
+    // create delete button on note
+    var deleteButtonNote = document.createElement('button');
+    deleteButtonNote.textContent = "Delete";
+    deleteButtonNote.className = "delete-note";
+    deleteButtonNote.id = "deleteNote";
+
+    createNewNote.appendChild(deleteButtonNote);
+
     
-};
+
+    
+    
+    
+    
+    document.getElementById('myNote').appendChild(createNewNote);
+    };
+    
+//};
+
+// delete note function
+var deleteNoteHandler = function(event) {
+    console.log(event.target);
+
+    if (event.target.matches("delete-note")) {
+        console.log("you clicked a deletebtn");
+    }
+}
+
+// edit note function
+var editNoteHandler = function(event) {
+    console.log(event.target);
+
+    if (event.target.matches("edit-note")) {
+        console.log("you clicked a edit btn");
+    }
+}
 
 // get value for links based on icon's class
 
@@ -124,6 +206,13 @@ var getTitleInfo = function(event) {
 
 // var to get note input
 var getNoteInfo = function(event) {
+    // clear out old note
+    var clearNote = document.getElementById('myNote');
+        while(clearNote.firstChild){
+            clearNote.removeChild(clearNote.firstChild);
+        }
+    
+    
 
     // capture input from textarea
     var getNewNote = document.getElementById('newNote').value;
@@ -148,3 +237,11 @@ document.getElementById("getTitle").onclick = function (event){
 document.getElementById("saveNewEvent").onclick = function (event){
     getNoteInfo();
 }
+
+// listen to delete note on button click
+deleteNote.addEventListener("click", deleteNoteHandler);
+
+// listen to edit note on button click
+editNote.addEventListener("click", editNoteHandler);
+
+
