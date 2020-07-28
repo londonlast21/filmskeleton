@@ -109,9 +109,7 @@ var getMedia = function(easyInput, mediaType){
 var getNote = function(noteInput){
     console.log(noteInput);
 
-    // clear old results
-    // if myNote exists already in div myNote, clear it
-    //if (myNote exists){
+    
     // use input to generate new note div
     var createNewNote = document.createElement('div');
     createNewNote.draggable = true;
@@ -135,11 +133,8 @@ var getNote = function(noteInput){
     deleteButtonNote.id = "deleteNote";
 
     createNewNote.appendChild(deleteButtonNote);
-
     
-
-    
-    
+    //
     
     
     document.getElementById('myNote').appendChild(createNewNote);
@@ -220,8 +215,6 @@ var getNoteInfo = function(event) {
         while(clearNote.firstChild){
             clearNote.removeChild(clearNote.firstChild);
         }
-    
-    
 
     // capture input from textarea
     var getNewNote = document.getElementById('newNote').value;

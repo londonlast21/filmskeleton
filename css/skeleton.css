@@ -64,10 +64,7 @@
 }
 
 /* styling column widths */
-.twelve-columns {
-  width: 100%;
-  
-}
+
 
 /* styling resource section */
 #anchor {
@@ -97,16 +94,21 @@ h5 {
 #note-creation {
   padding: 0;
   display: inline-grid;
-  max-width: 80px;
-  overflow: overlay;
+  width: fit-content;
+  max-height: 80px;
+  
   
 }
+#weekSection {
+  width: 100%;
+}
+.myNote {
+  width: fit-content;
+}
+
 #new-note {
   margin-bottom: 0;
   align-items:flex;
-}
-#seven-days-out {
-  width: fit-content;
 }
 
 .weekContainer {
