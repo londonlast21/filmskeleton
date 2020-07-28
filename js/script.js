@@ -207,7 +207,7 @@ var getResourceInfo = function(event) {
     // check to see input being logged
     console.log(helpInput);
    
-    var zipCodeInput = document.getElementById('zipCode');
+    var zipCodeInput = document.getElementById('zipCode').value;
      // reject it if it isn't five integers
     //if {
 
