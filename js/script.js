@@ -156,6 +156,7 @@ var deleteMovieHandler = function(event) {
 
 
         // call delete function
+        deleteMovie(movieIdGet);
         
     }
 }
@@ -165,6 +166,9 @@ var deleteBookHandler = function(event){
 
     if (event.target.matches(".delete-book")) {
         var bookIdGet = event.target.getAttribute("deleteBookBtn-id");
+        console.log(bookIdGet);
+
+        deleteBook(bookIdGet);
     }
 }
 // delete general function
@@ -173,6 +177,9 @@ var deleteGeneralHandler = function(event){
 
     if (event.target.matches(".delete-general")) {
         var generalIdGet = event.target.getAttribute("deleteGeneralBtn-id");
+        console.log(generalIdGet);
+
+        deleteGeneral(generalIdGet);
     }
 }
 
@@ -230,7 +237,7 @@ var getNote = function(noteInput){
 
 // delete note secondary function
 var deleteNoteFromPage = function(noteIdGet) {
-    var noteSelected = document.querySelector(".scheduleEvent[delete-note-btn-id='"+ noteIdGet + "'");
+    var noteSelected = document.querySelector(".scheduleEvent[delete-note-btn-id='"+ noteIdGet + "']");
     console.log(noteSelected);
 }
 
@@ -360,8 +367,9 @@ var getNoteInfo = function(event) {
     // use note input to generate note card
     getNote(getNewNote);
 }
+// end of note function section
 
-// makin note draggable
+// draggable functions
 var dragIcon = function onDragStart(event) {
     event
     .dataTransfer
