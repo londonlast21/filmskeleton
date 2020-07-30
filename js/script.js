@@ -8,21 +8,10 @@ var mediaType ="";
 var deleteNote = document.querySelector("delete-note");
 var editNote = document.querySelector("edit-note");
 
-
-
-
+// counters
 var mediaIdCounter = 0;
 var noteIdCounter = 0;
 var deletebtnNoteCounter = 0;
-
-
-// draggable
-
-
-
-
-// delete media functions 
-
 
 
 // api call to generate image
@@ -417,13 +406,6 @@ var getNoteInfo = function(event) {
 }
 // end of note function section
 
-// draggable functions
-var dragIcon = function onDragStart(event) {
-    event
-    .dataTransfer
-    .setData('text/plain', event.target.id);
-    console.log(dragNote);
-}
 
 
 // onclick to get resource info links
@@ -431,10 +413,29 @@ var dragIcon = function onDragStart(event) {
 //     getResourceInfo();
 // }
 
+var dragIconHandler = function(event) {
+    /// set data so can be drag/dropped
+    var iconId = event.target.getAttribute("icon-id");
+    console.log("Icon ID:", iconId);
+
+    event.dataTransfer.setData("text/plain", iconID);
+
+    var getIconId = event.dataTransfer.getData("text/plain");
+    // check what is being stored
+    console.log("getIconId:", getIconId, typeof getIconId);
+
+}
+
+
+// listen for drag on the page entirity
+document.getElementsByClassName("tooltip").onclick = function (event){
+    dragIconHandler();
+}
 /// onclick to get data user's input from script in html tag
 document.getElementById("getTitle").onclick = function (event){
     getTitleInfo();     
 }
+
 // onclick to get data from user's input in week div
 document.getElementById("saveNewEvent").onclick = function (event){
     getNoteInfo();
