@@ -1,7 +1,9 @@
+
 var easyInput = "";
 var mediaType ="";
 //api keys go here 
-
+var apikey = "b8918a77ef3da9c62a4dc045d9aa28ee";
+var apikey2 = "17609511-a8b61b70dbfc9bcb99ef972fb";
 
 
 
@@ -12,6 +14,18 @@ var editNote = document.querySelector("edit-note");
 var mediaIdCounter = 0;
 var noteIdCounter = 0;
 var deletebtnNoteCounter = 0;
+
+// drag drop stuff
+const allowDrop = (event) => {
+       event.preventDefault();
+    console.log("drop working");
+   }
+const onDragStart = (event) => {
+    console.log("onDragStart");
+}
+const onDrop = (event) => {
+    console.log("onDrop");
+};
 
 
 // api call to generate image
@@ -413,7 +427,7 @@ var getNoteInfo = function(event) {
 //     getResourceInfo();
 // }
 
-var dragIconHandler = function(event) {
+var dragIconHandler = function() {
     /// set data so can be drag/dropped
     var iconId = event.target.getAttribute("icon-id");
     console.log("Icon ID:", iconId);
@@ -426,11 +440,29 @@ var dragIconHandler = function(event) {
 
 }
 
+// save data from media image drag/drop
+var mediaImageHandler = function() {
+    // set data 
+    var mediaImageId = event.target.getAttribute("id");
+    console.log("Image ID:", mediaImageId);
 
-// listen for drag on the page entirity
+    var getMediaImageID = event.dataTransfer.getData("text/plain");
+    //check whata is being stored
+    console.log("getMediaImageId:", getMediaImageId, typeof getMediaImageId);
+}
+
+
+// listen for drag on icons
 document.getElementsByClassName("tooltip").onclick = function (event){
     dragIconHandler();
 }
+
+// listen for drag on dynamic images
+document.getElementsByClassName("titleImage").onclick = function (event){
+    mediaImageHandler();
+}
+
+
 /// onclick to get data user's input from script in html tag
 document.getElementById("getTitle").onclick = function (event){
     getTitleInfo();     
@@ -440,9 +472,7 @@ document.getElementById("getTitle").onclick = function (event){
 document.getElementById("saveNewEvent").onclick = function (event){
     getNoteInfo();
 }
-// o
+// 
 
-
-
-
-
+window.addEventListener("dragstart", onDragStart);
+window.addEventListener("drop", onDrop);
