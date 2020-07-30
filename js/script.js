@@ -173,6 +173,12 @@ var getNote = function(noteInput){
 
 };
 
+// delete note secondary function
+var deleteNoteCompletely = function (noteIDGet) {
+    console.log(noteIdGet);
+};
+
+
 // delete note function
 var deleteNoteHandler = function(event) {
     // test if its working
@@ -181,8 +187,10 @@ var deleteNoteHandler = function(event) {
     if (event.target.matches(".delete-note")) {
         // get the element's task id
         var noteIdGet = event.target.getAttribute("note-id");
-        
+        // check the value were getting
         console.log(noteIdGet);
+        // call delete function
+        deleteNoteCompletely(noteIdGet);
     }
    
     
