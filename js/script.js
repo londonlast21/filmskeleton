@@ -229,7 +229,9 @@ var getNote = function(noteInput){
 };
 
 // delete note secondary function
-
+var deleteNoteFromPage = function(noteIdGet) {
+    var noteSelected = document.querySelector(".")
+}
 
 // delete note function
 var deleteNoteHandler = function(event) {
