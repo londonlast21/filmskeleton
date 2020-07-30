@@ -12,6 +12,8 @@ var editNote = document.querySelector("edit-note");
 
 
 var mediaIdCounter = 0;
+var noteIdCounter = 0;
+var deletebtnNoteCounter = 0;
 
 
 // draggable
@@ -245,17 +247,17 @@ var getNote = function(noteInput){
 
     
     // create edit button on note
-    var editButtonNote = document.createElement('button');
-    editButtonNote.textContent = "Edit";
-    editButtonNote.className = "edit-note";
-    editButtonNote.setAttribute("note-id", editbtnNoteCounter);
-    editButtonNote.id = "editNote";
+    // var editButtonNote = document.createElement('button');
+    // editButtonNote.textContent = "Edit";
+    // editButtonNote.className = "edit-note";
+    // editButtonNote.setAttribute("note-id", editbtnNoteCounter);
+    // editButtonNote.id = "editNote";
 
-    // listen to edit note on button click
-    editButtonNote.addEventListener("click", editNoteHandler);
+    // // listen to edit note on button click
+    // editButtonNote.addEventListener("click", editNoteHandler);
 
-    createNewNote.appendChild(editButtonNote);
-    editbtnNoteCounter++;
+    // createNewNote.appendChild(editButtonNote);
+    // editbtnNoteCounter++;
 
 
     // create delete button on note
@@ -287,10 +289,10 @@ var deleteNoteFromPage = function(noteIdGet) {
     
 }
 // edit note secondary function
-var editNoteFromPage = function(editNoteIdGet) {
-    var editNoteSelected = document.querySelector(".scheduleEvent[note-id='"+ editNoteIdGet + "']");
-    console.log(editNoteSelected);
-}
+// var editNoteFromPage = function(editNoteIdGet) {
+//     var editNoteSelected = document.querySelector(".scheduleEvent[note-id='"+ editNoteIdGet + "']");
+//     console.log(editNoteSelected);
+// }
 
 // delete note function
 var deleteNoteHandler = function(event) {
@@ -312,21 +314,21 @@ var deleteNoteHandler = function(event) {
 }
 
 // edit note function
-var editNoteHandler = function(event) {
-    // test if its working
-    console.log(event.target);
+// var editNoteHandler = function(event) {
+//     // test if its working
+//     console.log(event.target);
 
-    if (event.target.matches(".edit-note")) {
-        var editNoteIdGet = event.target.getAttribute("note-id");
-        console.log(editNoteIdGet);
+//     if (event.target.matches(".edit-note")) {
+//         var editNoteIdGet = event.target.getAttribute("note-id");
+//         console.log(editNoteIdGet);
 
-        // call edit function
-        editNoteFromPage(editNoteIdGet);
+//         // call edit function
+//         editNoteFromPage(editNoteIdGet);
 
-    }
+//     }
 
     
-}
+// }
 
 
 
