@@ -20,37 +20,6 @@ var generalbtnCounter = 0;
 $("#titleCard").draggable;
 
 
-// delete movie function
-var deleteMovieHandler = function(event) {
-    console.log(event.target);
-
-    if (event.target.matches(".deleteMovie")) {
-        // get the element's task id
-        var movieIdGet = event.target.getAttribute("deleteMovieBtn-id");
-        // check the value were getting
-        console.log(movieidGet);
-
-
-        // call delete function
-        
-    }
-}
-// delete book function
-var deleteBookHandler = function(event){
-    console.log(event.target);
-
-    if (event.target.matches(".delete-book")) {
-        var bookIdGet = event.target.getAttribute("deleteBookBtn-id");
-    }
-}
-// delete general function
-var deleteGeneralHandler = function(event){
-    console.log(event.target);
-
-    if (event.target.matches(".delete-general")) {
-        var generalIdGet = event.target.getAttribute("deleteGeneralBtn-id");
-    }
-}
 
 
 
@@ -174,6 +143,39 @@ var getMedia = function(easyInput, mediaType){
         })
     }
 };
+
+// delete movie function
+var deleteMovieHandler = function(event) {
+    console.log(event.target);
+
+    if (event.target.matches(".deleteMovie")) {
+        // get the element's task id
+        var movieIdGet = event.target.getAttribute("deleteMovieBtn-id");
+        // check the value were getting
+        console.log(movieidGet);
+
+
+        // call delete function
+        
+    }
+}
+// delete book function
+var deleteBookHandler = function(event){
+    console.log(event.target);
+
+    if (event.target.matches(".delete-book")) {
+        var bookIdGet = event.target.getAttribute("deleteBookBtn-id");
+    }
+}
+// delete general function
+var deleteGeneralHandler = function(event){
+    console.log(event.target);
+
+    if (event.target.matches(".delete-general")) {
+        var generalIdGet = event.target.getAttribute("deleteGeneralBtn-id");
+    }
+}
+
 
 //--------------//
 
