@@ -130,7 +130,7 @@ var getMedia = function(easyInput, mediaType){
             deleteGeneralBtn.textContent = "X";
             deleteGeneralBtn.className = "delete-general";
             deleteGeneralBtn.id = "deleteGeneral";
-            deleteGeneralBtn.setAttribute = ("deleteGeneralBtn-id", generalbtnCounter)
+            deleteGeneralBtn.setAttribute = ("general-id", generalbtnCounter)
 
             document.getElementById('deleteGeneral').appendChild(deleteGeneralBtn);
 
@@ -239,6 +239,7 @@ var getNote = function(noteInput){
 var deleteNoteFromPage = function(noteIdGet) {
     var noteSelected = document.querySelector(".scheduleEvent[note-id='"+ noteIdGet + "']");
     console.log(noteSelected);
+    
 }
 
 // delete note function
