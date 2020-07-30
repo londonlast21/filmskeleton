@@ -21,6 +21,7 @@ $("#titleCard").draggable;
 
 
 
+// delete media functions 
 
 
 
@@ -143,6 +144,15 @@ var getMedia = function(easyInput, mediaType){
         })
     }
 };
+var deleteMovieIcon = function (movieIdGet) {
+    var movieSelected = document.querySelector(". [movie-id='"+movieIdGet + "']");
+}
+var deleteBookIcon = function(bookIdGet) {
+    var bookSelected = document.querySelector(". [book-id='"+bookIdGet + "']");
+}
+var deleteGeneralIcon = function(generalIdGet) {
+    var generalSelected = document.querySelector(".mo [general-id='"+generalIdGet + "']");
+}
 
 // delete movie function
 var deleteMovieHandler = function(event) {
@@ -200,6 +210,7 @@ var getNote = function(noteInput){
 
     createNewNote.setAttribute("note-id", noteIdCounter);
     
+    
     // create edit button on note
     var editButtonNote = document.createElement('button');
     editButtonNote.textContent = "Edit";
@@ -241,6 +252,11 @@ var deleteNoteFromPage = function(noteIdGet) {
     console.log(noteSelected);
     
 }
+// edit note secondary function
+var editNoteFromPage = function(editNoteIdGet) {
+    var editNoteSelected = document.querySelector(".scheduleEvent[note-id='"+ editNoteIdGet + "']");
+    console.log(editNoteSelected);
+}
 
 // delete note function
 var deleteNoteHandler = function(event) {
@@ -271,6 +287,7 @@ var editNoteHandler = function(event) {
         console.log(editNoteIdGet);
 
         // call edit function
+        editNoteFromPage(editNoteIdGet);
 
     }
 
@@ -350,12 +367,6 @@ var getNoteInfo = function(event) {
     }
 
 
-
-    //    // while(clearNote.firstChild){
-    //         clearNote.removeChild(clearNote.firstChild);
-    //         clearNote.removeChild(deleteButtonNote);
-    //         clearNote.removeChild(editButtonNote);
-    //     }
 
     // capture input from textarea
     var getNewNote = document.getElementById('newNote').value;
