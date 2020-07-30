@@ -53,6 +53,7 @@ var getMedia = function(easyInput, mediaType){
 
         movie.setAttribute("movie-id", movieIdCounter);
         
+        
         // create delete button
         var deleteMovieBtn = document.createElement('button');
         deleteMovieBtn.textContent = "X";
@@ -64,13 +65,14 @@ var getMedia = function(easyInput, mediaType){
 
 
         document.getElementById('titleImage').appendChild(movie);
+        titleImage.setAttribute =("class", mediaImage)
 
         movieIdCounter++;
         moviebtnCounter++;
 
         deleteMovieBtn.addEventListener("click", deleteMovieHandler);
 
-        console.log(movieId);
+        
 
 
     });}
@@ -151,7 +153,7 @@ var deleteBookIcon = function(bookIdGet) {
     var bookSelected = document.querySelector(". [book-id='"+bookIdGet + "']");
 }
 var deleteGeneralIcon = function(generalIdGet) {
-    var generalSelected = document.querySelector(".mo [general-id='"+generalIdGet + "']");
+    var generalSelected = document.querySelector(".title[general-id='"+generalIdGet + "']");
 }
 
 // delete movie function
@@ -209,7 +211,7 @@ var getNote = function(noteInput){
     createNewNote.innerHTML = noteInput;
 
     createNewNote.setAttribute("note-id", noteIdCounter);
-    
+
     
     // create edit button on note
     var editButtonNote = document.createElement('button');
@@ -250,6 +252,7 @@ var getNote = function(noteInput){
 var deleteNoteFromPage = function(noteIdGet) {
     var noteSelected = document.querySelector(".scheduleEvent[note-id='"+ noteIdGet + "']");
     console.log(noteSelected);
+    noteSelected.remove();
     
 }
 // edit note secondary function
