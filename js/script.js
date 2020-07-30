@@ -1,6 +1,8 @@
 var easyInput = "";
 var mediaType ="";
 //api keys go here 
+var apikey = "b8918a77ef3da9c62a4dc045d9aa28ee";
+var apikey2 = "17609511-a8b61b70dbfc9bcb99ef972fb";
 
 var deleteNote = document.querySelector("delete-note");
 var editNote = document.querySelector("edit-note");
@@ -138,6 +140,7 @@ var getNote = function(noteInput){
     var createNewNote = document.createElement('div');
     createNewNote.draggable = true;
     createNewNote.className = 'scheduleEvent';
+    createNewNote.id = "newNoteId";
     createNewNote.innerHTML = noteInput;
 
     createNewNote.setAttribute("note-id", noteIdCounter);
@@ -157,6 +160,7 @@ var getNote = function(noteInput){
     deleteButtonNote.textContent = "Delete";
     deleteButtonNote.className = "delete-note";
     deleteButtonNote.id = "deleteNote";
+    deleteButtonNote.value = "remove Element";
 
     createNewNote.appendChild(deleteButtonNote);
     
@@ -174,8 +178,7 @@ var getNote = function(noteInput){
 var deleteNoteHandler = function(event) {
     // test if its working
     console.log(event.target);
-    var deleteId = event.target.getAttribute("data-note-id");
-    console.log(deleteId);
+   
     
 }
 
@@ -200,16 +203,16 @@ var editNoteHandler = function(event) {
 
 
 
-// var to get resource input
-var getResourceInfo = function(event) {
+// var to get resource input search
+//var getResourceInfo = function(event) {
     // getting the value from the zip code entry
-    var helpInput = document.getElementById('dropdown-bar-help').value;
+    //var helpInput = document.getElementById('dropdown-bar-help').value;
     // check to see input being logged
-    console.log(helpInput);
+    //console.log(helpInput);
    
-    var zipCodeInput = document.getElementById('zipCode').value;
+    //var zipCodeInput = document.getElementById('zipCode').value;
      // reject it if it isn't five integers
-    //if {
+    //if { !zipCodeInput === 00000 < 
 
     // } else {
     //     console.log("err");
@@ -221,12 +224,12 @@ var getResourceInfo = function(event) {
 
 
     // check input being used
-    console.log(zipCodeInput);
+    //console.log(zipCodeInput);
     
 
     // send input to api call
     //getResourceInfo(helpInput, zipCodeInput);
-}
+//}
 
 // var to get media input
 var getTitleInfo = function(event) {
@@ -252,9 +255,21 @@ var getTitleInfo = function(event) {
 var getNoteInfo = function(event) {
     // clear out old note
     var clearNote = document.getElementById('myNote');
-        while(clearNote.firstChild){
-            clearNote.removeChild(clearNote.firstChild);
-        }
+    clearNote = function removeNote(clearNote, newNoteId);
+    if(newNoteId == clearNote) {
+        console.log("error");
+    }
+
+    // clear note appended to target section
+    clearNote.removeElement(parent, child);
+
+
+
+    //    // while(clearNote.firstChild){
+    //         clearNote.removeChild(clearNote.firstChild);
+    //         clearNote.removeChild(deleteButtonNote);
+    //         clearNote.removeChild(editButtonNote);
+    //     }
 
     // capture input from textarea
     var getNewNote = document.getElementById('newNote').value;
@@ -283,9 +298,9 @@ var dragIcon = function onDragStart(event) {
 
 
 // onclick to get resource info links
-document.getElementById("saveResource").onclick = function (event){
-    getResourceInfo();
-}
+// document.getElementById("saveResource").onclick = function (event){
+//     getResourceInfo();
+// }
 
 /// onclick to get data user's input from script in html tag
 document.getElementById("getTitle").onclick = function (event){
