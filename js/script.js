@@ -2,8 +2,10 @@ var easyInput = "";
 var mediaType ="";
 //api keys go here 
 
+
 var deleteNote = document.querySelector("delete-note");
 var editNote = document.querySelector("edit-note");
+
 
 var noteIdCounter = 0;
 var movieIdCounter = 0;
@@ -11,9 +13,7 @@ var bookIdCounter = 0;
 var generalIdCounter = 0;
 var deletebtnNoteCounter = 0;
 var editbtnNoteCounter = 0;
-var moviebtnCounter = 0;
-var bookbtnCounter = 0;
-var generalbtnCounter = 0;
+
 
 // draggable
 
@@ -57,22 +57,15 @@ var getMedia = function(easyInput, mediaType){
         deleteMovieBtn.textContent = "X";
         deleteMovieBtn.className = "delete-movie";
         deleteMovieBtn.id = "deleteMovie";
-        deleteMovieBtn.setAttribute = ("movie-id", moviebtnCounter);
+        deleteMovieBtn.setAttribute = ("movie-id", movieIdCounter);
+        deleteMovieBtn.addEventListener("click", deleteMovieHandler);
 
         document.getElementById('titleImage').appendChild(deleteMovieBtn);
-
-
         document.getElementById('titleImage').appendChild(movie);
         
-
-        movieIdCounter++;
-        moviebtnCounter++;
-
-        deleteMovieBtn.addEventListener("click", deleteMovieHandler);
-      
         //set class for entire titleImage space (button and image together)
-        titleImage.setAttribute = ("class", mediaImage)
-
+        titleImage.setAttribute = ("movie-id", movieIdCounter)
+        movieIdCounter++;
         
 
 
@@ -153,7 +146,8 @@ var getMedia = function(easyInput, mediaType){
     }
 };
 var deleteMovieIcon = function (movieIdGet) {
-    var movieSelected = document.querySelector(". [movie-id='"+movieIdGet + "']");
+    var movieSelected = document.querySelector(".titleCard[note-id='"+ noteIdGet + "']");
+    console.log(movieSelected);
 }
 var deleteBookIcon = function(bookIdGet) {
     var bookSelected = document.querySelector(". [book-id='"+bookIdGet + "']");
@@ -166,16 +160,11 @@ var deleteGeneralIcon = function(generalIdGet) {
 var deleteMovieHandler = function(event) {
     console.log(event.target);
 
-    if (event.target.matches(".deleteMovie")) {
-        // get the element's task id
+    if (event.target.matches(".delete-movie")) {
+        // get element's task id
         var movieIdGet = event.target.getAttribute("movie-id");
-        // check the value were getting
-        console.log(movieidGet);
-
-
-        // call delete function
-        deleteMovie(movieIdGet);
-        
+        // check the value we're getting
+        console.log(movieIdGet);
     }
 }
 // delete book function
@@ -200,7 +189,6 @@ var deleteGeneralHandler = function(event){
         deleteGeneral(generalIdGet);
     }
 }
-
 
 //--------------//
 
