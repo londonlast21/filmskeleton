@@ -2,7 +2,6 @@ var easyInput = "";
 var mediaType ="";
 //api keys go here 
 
-
 var deleteNote = document.querySelector("delete-note");
 var editNote = document.querySelector("edit-note");
 
@@ -17,7 +16,7 @@ var bookbtnCounter = 0;
 var generalbtnCounter = 0;
 
 // draggable
-$("#titleCard").draggable;
+
 
 
 
@@ -46,7 +45,6 @@ var getMedia = function(easyInput, mediaType){
 
         // function to create note card based on user input
         var movie = document.createElement('img');
-        movie.draggable = true;
         movie.className = "titleCard";
         movie.id = "movie";
         movie.setAttribute("src", "http://image.tmdb.org/t/p/w185/"+ data.results[0].poster_path);
@@ -65,12 +63,15 @@ var getMedia = function(easyInput, mediaType){
 
 
         document.getElementById('titleImage').appendChild(movie);
-        titleImage.setAttribute =("class", mediaImage)
+        
 
         movieIdCounter++;
         moviebtnCounter++;
 
         deleteMovieBtn.addEventListener("click", deleteMovieHandler);
+      
+        //set class for entire titleImage space (button and image together)
+        titleImage.setAttribute = ("class", mediaImage)
 
         
 
@@ -87,7 +88,6 @@ var getMedia = function(easyInput, mediaType){
 
             // function to create img
             var book = document.createElement('img');
-            book.draggable = true;
             book.className = "titleCard";
             book.id = "book";
             book.setAttribute("src", data.items[0].volumeInfo.imageLinks.thumbnail);
@@ -106,9 +106,13 @@ var getMedia = function(easyInput, mediaType){
             document.getElementById('titleImage').appendChild(book);
 
             deleteBookBtn.addEventListener("click", deleteBookHandler);
+
+            //set class for entire titleImage space (button and image together)
+            titleImage.setAttribute = ("class", mediaImage)
             
             bookIdCounter++;
             bookbtnCounter++;
+            
         })
 
     } else if (mediaType === "General"){
@@ -122,7 +126,6 @@ var getMedia = function(easyInput, mediaType){
 
             // // function to create img
             var general = document.createElement('img');
-            general.draggable = true;
             general.className = "titleCard";
             general.id = "general";
             general.setAttribute("src", data.hits[0].largeImageURL);
@@ -140,6 +143,9 @@ var getMedia = function(easyInput, mediaType){
             document.getElementById('titleImage').appendChild(general);
 
             deleteGeneralBtn.addEventListener("click", deleteGeneralHandler);
+
+            //set class for entire titleImage space (button and image together)
+            titleImage.setAttribute = ("class", mediaImage)
             
             generalIdCounter++;
             generalbtnCounter++;
@@ -153,7 +159,7 @@ var deleteBookIcon = function(bookIdGet) {
     var bookSelected = document.querySelector(". [book-id='"+bookIdGet + "']");
 }
 var deleteGeneralIcon = function(generalIdGet) {
-    var generalSelected = document.querySelector(".title[general-id='"+generalIdGet + "']");
+    var generalSelected = document.querySelector("[general-id='"+generalIdGet + "']");
 }
 
 // delete movie function
