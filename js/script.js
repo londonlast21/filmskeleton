@@ -10,6 +10,11 @@ var noteIdCounter = 0;
 var movieIdCounter = 0;
 var bookIdCounter = 0;
 var generalIdCounter = 0;
+var deletebtnNoteCounter = 0;
+var editbtnNoteCounter = 0;
+var moviebtnCounter = 0;
+var bookbtnCounter = 0;
+var generalbtnCounter = 0;
 
 // draggable
 $("#titleCard").draggable;
@@ -52,13 +57,15 @@ var getMedia = function(easyInput, mediaType){
         deleteMovieBtn.textContent = "X";
         deleteMovieBtn.className = "delete-movie";
         deleteMovieBtn.id = "deleteMovie";
+        deleteMovieBtn.setAttribute = ("deleteMovieBtn-id", moviebtnCounter);
 
-       document.getElementById('titleImage').appendChild(deleteMovieBtn);
+        document.getElementById('titleImage').appendChild(deleteMovieBtn);
 
 
         document.getElementById('titleImage').appendChild(movie);
 
         movieIdCounter++;
+        moviebtnCounter++;
 
         console.log(movieId);
 
@@ -87,6 +94,7 @@ var getMedia = function(easyInput, mediaType){
             deleteBookBtn.textContent = "X";
             deleteBookBtn.className = "delete-book";
             deleteBookBtn.id = "deleteBook";
+            deleteBookBtn.setAttribute = ("deleteBookBtn-id", bookbtnCounter);
             
 
             document.getElementById('book').appendChild(deleteBookBtn);
@@ -95,6 +103,7 @@ var getMedia = function(easyInput, mediaType){
             document.getElementById('titleImage').appendChild(book);
             
             bookIdCounter++;
+            bookbtnCounter++;
         })
 
     } else if (mediaType === "General"){
@@ -119,11 +128,14 @@ var getMedia = function(easyInput, mediaType){
             deleteGeneralBtn.textContent = "X";
             deleteGeneralBtn.className = "delete-general";
             deleteGeneralBtn.id = "deleteGeneral";
+            deleteGeneralBtn.setAttribute = ("deleteGeneralBtn-id", generalbtnCounter)
 
             document.getElementById('deleteGeneral').appendChild(deleteGeneralBtn);
 
             document.getElementById('titleImage').appendChild(general);
+            
             generalIdCounter++;
+            generalbtnCounter++;
         })
     }
 };
@@ -143,25 +155,31 @@ var getNote = function(noteInput){
     createNewNote.innerHTML = noteInput;
 
     createNewNote.setAttribute("note-id", noteIdCounter);
+    
     // create edit button on note
     var editButtonNote = document.createElement('button');
     editButtonNote.textContent = "Edit";
     editButtonNote.className = "edit-note";
+    editButtonNote.setAttribute("edit-note-btn-id", editbtnNoteCounter);
     editButtonNote.id = "editNote";
 
     // listen to edit note on button click
     editButtonNote.addEventListener("click", editNoteHandler);
 
-
     createNewNote.appendChild(editButtonNote);
+    editbtnNoteCounter++;
+
+
     // create delete button on note
     var deleteButtonNote = document.createElement('button');
     deleteButtonNote.textContent = "Delete";
     deleteButtonNote.className = "delete-note";
+    deleteButtonNote.setAttribute("delete-note-btn-id", deletebtnNoteCounter)
     deleteButtonNote.id = "deleteNote";
     deleteButtonNote.value = "remove Element";
 
     createNewNote.appendChild(deleteButtonNote);
+    deletebtnNoteCounter++;
     
     //
     
@@ -174,9 +192,6 @@ var getNote = function(noteInput){
 };
 
 // delete note secondary function
-var deleteNoteCompletely = function (noteIDGet) {
-    console.log(noteIdGet);
-};
 
 
 // delete note function
@@ -186,11 +201,13 @@ var deleteNoteHandler = function(event) {
 
     if (event.target.matches(".delete-note")) {
         // get the element's task id
-        var noteIdGet = event.target.getAttribute("note-id");
+        var noteIdGet = event.target.getAttribute("delete-note-btn-id");
         // check the value were getting
         console.log(noteIdGet);
+
+
         // call delete function
-        deleteNoteCompletely(noteIdGet);
+        
     }
    
     
@@ -234,8 +251,6 @@ var editNoteHandler = function(event) {
     // }
 
     // turn input into a string
-    
-
 
     // check input being used
     //console.log(zipCodeInput);
