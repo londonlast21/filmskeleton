@@ -57,7 +57,7 @@ var getMedia = function(easyInput, mediaType){
         deleteMovieBtn.textContent = "X";
         deleteMovieBtn.className = "delete-movie";
         deleteMovieBtn.id = "deleteMovie";
-        deleteMovieBtn.setAttribute = ("deleteMovieBtn-id", moviebtnCounter);
+        deleteMovieBtn.setAttribute = ("movie-id", moviebtnCounter);
 
         document.getElementById('titleImage').appendChild(deleteMovieBtn);
 
@@ -96,7 +96,7 @@ var getMedia = function(easyInput, mediaType){
             deleteBookBtn.textContent = "X";
             deleteBookBtn.className = "delete-book";
             deleteBookBtn.id = "deleteBook";
-            deleteBookBtn.setAttribute = ("deleteBookBtn-id", bookbtnCounter);
+            deleteBookBtn.setAttribute = ("book-id", bookbtnCounter);
             
 
             document.getElementById('book').appendChild(deleteBookBtn);
@@ -150,7 +150,7 @@ var deleteMovieHandler = function(event) {
 
     if (event.target.matches(".deleteMovie")) {
         // get the element's task id
-        var movieIdGet = event.target.getAttribute("deleteMovieBtn-id");
+        var movieIdGet = event.target.getAttribute("movie-id");
         // check the value were getting
         console.log(movieidGet);
 
@@ -165,7 +165,7 @@ var deleteBookHandler = function(event){
     console.log(event.target);
 
     if (event.target.matches(".delete-book")) {
-        var bookIdGet = event.target.getAttribute("deleteBookBtn-id");
+        var bookIdGet = event.target.getAttribute("book-id");
         console.log(bookIdGet);
 
         deleteBook(bookIdGet);
@@ -176,7 +176,7 @@ var deleteGeneralHandler = function(event){
     console.log(event.target);
 
     if (event.target.matches(".delete-general")) {
-        var generalIdGet = event.target.getAttribute("deleteGeneralBtn-id");
+        var generalIdGet = event.target.getAttribute("general-id");
         console.log(generalIdGet);
 
         deleteGeneral(generalIdGet);
@@ -204,7 +204,7 @@ var getNote = function(noteInput){
     var editButtonNote = document.createElement('button');
     editButtonNote.textContent = "Edit";
     editButtonNote.className = "edit-note";
-    editButtonNote.setAttribute("edit-note-btn-id", editbtnNoteCounter);
+    editButtonNote.setAttribute("note-id", editbtnNoteCounter);
     editButtonNote.id = "editNote";
 
     // listen to edit note on button click
@@ -218,7 +218,7 @@ var getNote = function(noteInput){
     var deleteButtonNote = document.createElement('button');
     deleteButtonNote.textContent = "Delete";
     deleteButtonNote.className = "delete-note";
-    deleteButtonNote.setAttribute("delete-note-btn-id", deletebtnNoteCounter)
+    deleteButtonNote.setAttribute("note-id", deletebtnNoteCounter)
     deleteButtonNote.id = "deleteNote";
     deleteButtonNote.value = "remove Element";
 
@@ -237,7 +237,7 @@ var getNote = function(noteInput){
 
 // delete note secondary function
 var deleteNoteFromPage = function(noteIdGet) {
-    var noteSelected = document.querySelector(".scheduleEvent[delete-note-btn-id='"+ noteIdGet + "']");
+    var noteSelected = document.querySelector(".scheduleEvent[note-id='"+ noteIdGet + "']");
     console.log(noteSelected);
 }
 
@@ -248,7 +248,7 @@ var deleteNoteHandler = function(event) {
 
     if (event.target.matches(".delete-note")) {
         // get the element's task id
-        var noteIdGet = event.target.getAttribute("delete-note-btn-id");
+        var noteIdGet = event.target.getAttribute("note-id");
         // check the value were getting
         console.log(noteIdGet);
 
@@ -266,7 +266,7 @@ var editNoteHandler = function(event) {
     console.log(event.target);
 
     if (event.target.matches(".edit-note")) {
-        var editNoteIdGet = event.target.getAttribute("edit-note-btn-id");
+        var editNoteIdGet = event.target.getAttribute("note-id");
         console.log(editNoteIdGet);
 
         // call edit function
