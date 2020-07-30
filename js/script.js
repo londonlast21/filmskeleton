@@ -230,7 +230,8 @@ var getNote = function(noteInput){
 
 // delete note secondary function
 var deleteNoteFromPage = function(noteIdGet) {
-    var noteSelected = document.querySelector(".")
+    var noteSelected = document.querySelector(".scheduleEvent[delete-note-btn-id='"+ noteIdGet + "'");
+    console.log(noteSelected);
 }
 
 // delete note function
@@ -246,7 +247,7 @@ var deleteNoteHandler = function(event) {
 
 
         // call delete function
-        
+        deleteNoteFromPage(noteIdGet);
     }
    
     
