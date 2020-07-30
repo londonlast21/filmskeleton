@@ -178,7 +178,7 @@ var deleteNoteHandler = function(event) {
     // test if its working
     console.log(event.target);
 
-    if (event.target.matches(".deleteNote")) {
+    if (event.target.matches(".delete-note")) {
         // get the element's task id
         var noteIdGet = event.target.getAttribute("note-id");
         
