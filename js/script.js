@@ -7,12 +7,12 @@ var deleteNote = document.querySelector("delete-note");
 var editNote = document.querySelector("edit-note");
 
 
-var noteIdCounter = 0;
-var movieIdCounter = 0;
-var bookIdCounter = 0;
-var generalIdCounter = 0;
-var deletebtnNoteCounter = 0;
-var editbtnNoteCounter = 0;
+
+
+var mediaIdCounter = 0;
+// var bookIdCounter = 0;
+// var generalIdCounter = 0;
+
 
 
 // draggable
@@ -28,7 +28,7 @@ var editbtnNoteCounter = 0;
 var getMedia = function(easyInput, mediaType){
 
     // clear old results
-    document.getElementById('titleImage').innerHTML = "";
+    document.getElementById('mediaImage').innerHTML = "";
 
     
 
@@ -44,12 +44,18 @@ var getMedia = function(easyInput, mediaType){
         console.log(data);
 
         // function to create note card based on user input
+        var titleImage = document.createElement('div');
+        titleImage.className = "titleImage";
+        titleImage.id = "titleImage";
+        titleImage.setAttribute("movie-id", mediaIdCounter);
+        document.getElementById('mediaImage').appendChild(titleImage);
+        
         var movie = document.createElement('img');
         movie.className = "titleCard";
         movie.id = "movie";
         movie.setAttribute("src", "http://image.tmdb.org/t/p/w185/"+ data.results[0].poster_path);
 
-        movie.setAttribute("movie-id", movieIdCounter);
+        //movie.setAttribute("movie-id", movieIdCounter);
         
         
         // create delete button
@@ -57,15 +63,24 @@ var getMedia = function(easyInput, mediaType){
         deleteMovieBtn.textContent = "X";
         deleteMovieBtn.className = "delete-movie";
         deleteMovieBtn.id = "deleteMovie";
-        deleteMovieBtn.setAttribute = ("movie-id", movieIdCounter);
+        deleteMovieBtn.setAttribute("movie-id", mediaIdCounter);
+        
         deleteMovieBtn.addEventListener("click", deleteMovieHandler);
 
         document.getElementById('titleImage').appendChild(deleteMovieBtn);
         document.getElementById('titleImage').appendChild(movie);
         
         //set class for entire titleImage space (button and image together)
-        titleImage.setAttribute = ("movie-id", movieIdCounter)
-        movieIdCounter++;
+        mediaGenerated = titleImage.setAttribute("id", "movie" + mediaIdCounter)
+
+
+
+        mediaIdCounter++;
+
+        // //stick div to mediaresults area
+        // document.getElementById("mediaImage").appendChild(titleImageCard);
+
+   
         
 
 
@@ -79,20 +94,26 @@ var getMedia = function(easyInput, mediaType){
         .then(function(data) {
             console.log(data);
 
+            var titleImage = document.createElement('div');
+            titleImage.className = "titleImage";
+            titleImage.id = "titleImage";
+            titleImage.setAttribute("book-id", mediaIdCounter);
+            document.getElementById('mediaImage').appendChild(titleImage);
+
             // function to create img
             var book = document.createElement('img');
             book.className = "titleCard";
             book.id = "book";
             book.setAttribute("src", data.items[0].volumeInfo.imageLinks.thumbnail);
 
-            book.setAttribute("book-id", bookIdCounter);
+            book.setAttribute("book-id", mediaIdCounter);
 
             // create delete button on image
             var deleteBookBtn = document.createElement('button');
             deleteBookBtn.textContent = "X";
             deleteBookBtn.className = "delete-book";
             deleteBookBtn.id = "deleteBook";
-            deleteBookBtn.setAttribute = ("book-id", bookbtnCounter);
+            deleteBookBtn.setAttribute = ("book-id", mediaIdCounter);
             
 
             document.getElementById('book').appendChild(deleteBookBtn);
@@ -101,10 +122,10 @@ var getMedia = function(easyInput, mediaType){
             deleteBookBtn.addEventListener("click", deleteBookHandler);
 
             //set class for entire titleImage space (button and image together)
-            titleImage.setAttribute = ("class", mediaImage)
+            titleImage.setAttribute = ("id", "book" + mediaIdCounter);
             
-            bookIdCounter++;
-            bookbtnCounter++;
+            mediaIdCounter++;
+            
             
         })
 
@@ -122,14 +143,14 @@ var getMedia = function(easyInput, mediaType){
             general.className = "titleCard";
             general.id = "general";
             general.setAttribute("src", data.hits[0].largeImageURL);
-            general.setAttribute("general-id", generalIdCounter);
+            general.setAttribute("general-id", mediaIdCounter);
 
             // create delete button
             var deleteGeneralBtn = document.createElement('button');
             deleteGeneralBtn.textContent = "X";
             deleteGeneralBtn.className = "delete-general";
             deleteGeneralBtn.id = "deleteGeneral";
-            deleteGeneralBtn.setAttribute = ("general-id", generalbtnCounter)
+            deleteGeneralBtn.setAttribute = ("general-id", mediaIdCounter)
 
             document.getElementById('deleteGeneral').appendChild(deleteGeneralBtn);
 
@@ -138,22 +159,22 @@ var getMedia = function(easyInput, mediaType){
             deleteGeneralBtn.addEventListener("click", deleteGeneralHandler);
 
             //set class for entire titleImage space (button and image together)
-            titleImage.setAttribute = ("class", mediaImage)
+            titleImage.setAttribute = ("id", "general" + mediaIdCounter)
             
-            generalIdCounter++;
-            generalbtnCounter++;
+            medialIdCounter++;
+            
         })
     }
 };
 var deleteMovieIcon = function (movieIdGet) {
-    var movieSelected = document.querySelector(".titleCard[note-id='"+ noteIdGet + "']");
+    var movieSelected = document.querySelector("#movie" + movieIdGet);
     console.log(movieSelected);
 }
 var deleteBookIcon = function(bookIdGet) {
-    var bookSelected = document.querySelector(". [book-id='"+bookIdGet + "']");
+    var bookSelected = document.querySelector("#book" + bookIdGet);
 }
 var deleteGeneralIcon = function(generalIdGet) {
-    var generalSelected = document.querySelector("[general-id='"+generalIdGet + "']");
+    var generalSelected = document.querySelector("#general" + generalIdGet);
 }
 
 // delete movie function
@@ -165,7 +186,11 @@ var deleteMovieHandler = function(event) {
         var movieIdGet = event.target.getAttribute("movie-id");
         // check the value we're getting
         console.log(movieIdGet);
+
+        deleteMovieIcon(movieIdGet);
     }
+
+    
 }
 // delete book function
 var deleteBookHandler = function(event){
