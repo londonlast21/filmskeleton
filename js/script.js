@@ -4,6 +4,7 @@ var mediaType ="";
 
 
 
+
 var deleteNote = document.querySelector("delete-note");
 var editNote = document.querySelector("edit-note");
 
@@ -76,10 +77,6 @@ var getMedia = function(easyInput, mediaType){
         // //stick div to mediaresults area
         // document.getElementById("mediaImage").appendChild(titleImageCard);
 
-   
-        
-
-
     });}
     else if (mediaType === "Book"){
         // API call to google Books api
@@ -96,6 +93,8 @@ var getMedia = function(easyInput, mediaType){
             titleImage.setAttribute("book-id", mediaIdCounter);
             document.getElementById('mediaImage').appendChild(titleImage);
 
+            console.log(mediaIdCounter);
+
             // function to create img
             var book = document.createElement('img');
             book.className = "titleCard";
@@ -108,7 +107,7 @@ var getMedia = function(easyInput, mediaType){
             deleteBookBtn.textContent = "X";
             deleteBookBtn.className = "delete-book";
             deleteBookBtn.id = "deleteBook";
-            deleteBookBtn.setAttribute = ("book-id", mediaIdCounter);
+            deleteBookBtn.setAttribute("book-id", mediaIdCounter);
 
             deleteBookBtn.addEventListener("click", deleteBookHandler);
 
@@ -117,7 +116,7 @@ var getMedia = function(easyInput, mediaType){
 
 
             //set class for entire titleImage space (button and image together)
-            mediaGenerated = titleImage.setAttribute = ("id", "book" + mediaIdCounter);
+            mediaGenerated = titleImage.setAttribute("id", "book" + mediaIdCounter);
             
             mediaIdCounter++;
             
@@ -160,7 +159,7 @@ var getMedia = function(easyInput, mediaType){
             document.getElementById('titleImage').appendChild(general);
 
             //set class for entire titleImage space (button and image together)
-            mediaGenerated = titleImage.setAttribute = ("id", "general" + mediaIdCounter)
+            mediaGenerated = titleImage.setAttribute("id", "general" + mediaIdCounter)
             
             mediaIdCounter++;
             
@@ -208,6 +207,7 @@ var deleteBookHandler = function(event){
 
     if (event.target.matches(".delete-book")) {
         var bookIdGet = event.target.getAttribute("book-id");
+        // check the value we are getting
         console.log(bookIdGet);
 
         deleteBookIcon(bookIdGet);
