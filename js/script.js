@@ -20,7 +20,38 @@ var generalbtnCounter = 0;
 $("#titleCard").draggable;
 
 
-// resource functions
+// delete movie function
+var deleteMovieHandler = function(event) {
+    console.log(event.target);
+
+    if (event.target.matches(".deleteMovie")) {
+        // get the element's task id
+        var movieIdGet = event.target.getAttribute("deleteMovieBtn-id");
+        // check the value were getting
+        console.log(movieidGet);
+
+
+        // call delete function
+        
+    }
+}
+// delete book function
+var deleteBookHandler = function(event){
+    console.log(event.target);
+
+    if (event.target.matches(".delete-book")) {
+        var bookIdGet = event.target.getAttribute("deleteBookBtn-id");
+    }
+}
+// delete general function
+var deleteGeneralHandler = function(event){
+    console.log(event.target);
+
+    if (event.target.matches(".delete-general")) {
+        var generalIdGet = event.target.getAttribute("deleteGeneralBtn-id");
+    }
+}
+
 
 
 
@@ -67,6 +98,8 @@ var getMedia = function(easyInput, mediaType){
         movieIdCounter++;
         moviebtnCounter++;
 
+        deleteMovieBtn.addEventListener("click", deleteMovieHandler);
+
         console.log(movieId);
 
 
@@ -98,9 +131,9 @@ var getMedia = function(easyInput, mediaType){
             
 
             document.getElementById('book').appendChild(deleteBookBtn);
-
-
             document.getElementById('titleImage').appendChild(book);
+
+            deleteBookBtn.addEventListener("click", deleteBookHandler);
             
             bookIdCounter++;
             bookbtnCounter++;
@@ -133,6 +166,8 @@ var getMedia = function(easyInput, mediaType){
             document.getElementById('deleteGeneral').appendChild(deleteGeneralBtn);
 
             document.getElementById('titleImage').appendChild(general);
+
+            deleteGeneralBtn.addEventListener("click", deleteGeneralHandler);
             
             generalIdCounter++;
             generalbtnCounter++;
@@ -217,6 +252,14 @@ var deleteNoteHandler = function(event) {
 var editNoteHandler = function(event) {
     // test if its working
     console.log(event.target);
+
+    if (event.target.matches(".edit-note")) {
+        var editNoteIdGet = event.target.getAttribute("edit-note-btn-id");
+        console.log(editNoteIdGet);
+
+        // call edit function
+
+    }
 
     
 }
@@ -321,11 +364,6 @@ var dragIcon = function onDragStart(event) {
     console.log(dragNote);
 }
 
-//to delete the note
-//var noteDelete = function()
-
-
-
 
 // onclick to get resource info links
 // document.getElementById("saveResource").onclick = function (event){
@@ -340,6 +378,7 @@ document.getElementById("getTitle").onclick = function (event){
 document.getElementById("saveNewEvent").onclick = function (event){
     getNoteInfo();
 }
+// o
 
 
 
