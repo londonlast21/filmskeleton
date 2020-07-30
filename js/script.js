@@ -80,7 +80,7 @@ var getMedia = function(easyInput, mediaType){
             book.id = "book";
             book.setAttribute("src", data.items[0].volumeInfo.imageLinks.thumbnail);
 
-            book.setAttribute("book-is", bookIdCounter);
+            book.setAttribute("book-id", bookIdCounter);
 
             // create delete button on image
             var deleteBookBtn = document.createElement('button');
@@ -177,6 +177,13 @@ var getNote = function(noteInput){
 var deleteNoteHandler = function(event) {
     // test if its working
     console.log(event.target);
+
+    if (event.target.matches(".deleteNote")) {
+        // get the element's task id
+        var noteIdGet = event.target.getAttribute("note-id");
+        
+        console.log(noteIdGet);
+    }
    
     
 }
@@ -254,13 +261,14 @@ var getTitleInfo = function(event) {
 var getNoteInfo = function(event) {
     // clear out old note
     var clearNote = document.getElementById('myNote');
-    clearNote = function removeNote(clearNote, newNoteId);
-    if(newNoteId == clearNote) {
+    clearNote = function removeNote(clearNote, newNoteId) {
+    if (newNoteId == clearNote) {
         console.log("error");
     }
 
     // clear note appended to target section
     clearNote.removeElement(parent, child);
+    }
 
 
 
