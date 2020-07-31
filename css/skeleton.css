@@ -248,6 +248,10 @@ h5 {
   float: right;
 }
 
+.h4 {
+  z-index: 99;
+}
+
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
