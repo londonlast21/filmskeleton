@@ -30,7 +30,7 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <header>
-    <h1 style="text-align:center">My Dashboard</h1>
+    <h1 style="text-align:center" class="no-drop">My Dashboard</h1>
   </header>
 
 
@@ -38,7 +38,7 @@
   <div class="container">
     <div class="row">
       <div id="work-column" class="one-half column">
-        <h2>Working On:</h2> 
+        <h2 class="no-drop">Working On:</h2> 
         <div id="bigColumn1" class="working-on" ondrop="drop(event)" onDragOver="allowDrop(event)">
         
         </div>
@@ -50,11 +50,8 @@
 
   <div class="row">
     <div id="trigger-column" class="one-half column">
-    <h2>My Triggers:</h2>
+    <h2 class="no-drop">My Triggers:</h2>
       <div id="bigColumn2" class="my-triggers" onDragOver="allowDrop(event)">
-      </br>
-    </br>
-  </br>
       </div>
     </div>
   </div>
@@ -212,32 +209,33 @@
 
         <!-- week day boxes start -->
         <div id="week-area" class="weekContainer">
+
+          <p id="day-title" class="no-drop">Monday</p>
           <div id="monday" class="scheduleDay" ondrop="drop(event)" onDragOver="allowDrop(event)">
-            <p>Monday</p>
           </div>
 
-          <div id="tuesday" class="scheduleDay" ondrop="drop(event)" onDragOver="allowDrop(event)">
-            <p>Tuesday</p>
+          <p id="day-title" class="no-drop">Tuesday</p>
+          <div id="tuesday" class="scheduleDay" ondrop="drop(event)" onDragOver="allowDrop(event)">  
           </div>
 
+          <p id="day-title" class="no-drop">Wednesday</p>
           <div id="wednesday" class="scheduleDay" ondrop="drop(event)" onDragOver="allowDrop(event)">
-            <p>Wednesday</p>
           </div>
 
+          <p id="day-title" class="no-drop">Thursday</p>
           <div id="thursday" class="scheduleDay" ondrop="drop(event)" onDragOver="allowDrop(event)">
-            <p>Thursday</p>
           </div>
 
+          <p id="day-title" class="no-drop">Friday</p>
           <div id="friday" class="scheduleDay" ondrop="drop(event)" onDragOver="allowDrop(event)">
-            <p>Friday</p>
           </div>
 
+          <p id="day-title" class="no-drop">Saturday</p>
           <div id="saturday" class="scheduleDay" ondrop="drop(event)" onDragOver="allowDrop(event)">
-            <p>Saturday</p>
           </div>
 
+          <p id="day-title" class="no-drop">Sunday</p>
           <div id="sunday" class="scheduleDay" ondrop="drop(event)" onDragOver="allowDrop(event)">
-            <p>Sunday</p>
           </div>
         <!--weekday boxes end-->
         </div>

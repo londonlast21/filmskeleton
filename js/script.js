@@ -19,11 +19,17 @@ var mediaIdCounter = 0;
 var noteIdCounter = 0;
 var deletebtnNoteCounter = 0;
 
-// function to retain information on page load
+//function to retain information on page load
 var loadPageData = function (event) {
   var workingOnColumnData = localStorage.getItem("workingOnColumn");
+
+
+
   var triggerColumnData = localStorage.getItem("triggerColumn");
+
+
   var mondayData = localStorage.getItem("mondayInfo");
+  
   var tuesdayData = localStorage.getItem("tuesdayInfo");
   var wednesdayData = localStorage.getItem("wednesdayInfo");
   var thursdayData = localStorage.getItem("thursdayInfo");
@@ -32,8 +38,8 @@ var loadPageData = function (event) {
   var sundayData = localStorage.getItem("sundayInfo");
   var iconBoxData = localStorage.getItem("iconsBox");
 
-  document.getElementById("work-column").innerHTML = workingOnColumnData;
-  document.getElementById("trigger-column").innerHTML = triggerColumnData;
+  document.getElementById("bigColumn1").innerHTML = workingOnColumnData;
+  document.getElementById("bigColumn2").innerHTML = triggerColumnData;
   document.getElementById("monday").innerHTML = mondayData;
   document.getElementById("tuesday").innerHTML = tuesdayData;
   document.getElementById("wednesday").innerHTML = wednesdayData;
@@ -96,11 +102,11 @@ const onDrop = (event) => {
 
     localStorage.setItem(
       "workingOnColumn",
-      document.getElementById("work-column").innerHTML
+      document.getElementById("bigColumn1").innerHTML
     );
     localStorage.setItem(
         "triggerColumn", 
-        document.getElementById("trigger-column").innerHTML
+        document.getElementById("bigColumn2").innerHTML
         );
     localStorage.setItem(
         "mondayInfo", 
@@ -550,42 +556,6 @@ var getNoteInfo = function (event) {
 //     getResourceInfo();
 // }
 
-// var dragIconHandler = function() {
-//     /// set data so can be drag/dropped
-//     var iconId = event.target.getAttribute("icon-id");
-//     console.log("Icon ID:", iconId);
-
-//     event.dataTransfer.setData("text/plain", event.target.iconId);
-
-// }
-
-// // save data from media image drag/drop
-// var mediaImageHandler = function() {
-//     // set data
-//     var mediaImageId = event.target.getAttribute("id");
-//     console.log("Image ID:", mediaImageId);
-
-//     event.dataTransfer.setData("text/plain", event.target.mediaImageId);
-// }
-
-// // listen for drag on icons
-// document.getElementsByClassName("tooltip").onclick = function (event){
-//     dragIconHandler();
-// }
-
-// listen for drag on dynamic images
-// document.getElementsByClassName("titleImage").onclick = function (event){
-//     mediaImageHandler();
-// }
-
-// listen for drag on dynamic notes
-//document.getElementsBy
-
-// listen for drop on working on column
-
-// listen for drop on triggers column
-
-// listen for drop on days
 
 /// onclick to get data user's input from script in html tag
 document.getElementById("getTitle").onclick = function (event) {

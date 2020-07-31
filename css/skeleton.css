@@ -123,13 +123,13 @@ h5 {
 
 .scheduleDay {
   background-color: lightskyblue;
-  display: inline-flex;
+ 
   margin: 2px;
-  height: 150px;
+  height: 75px;
   width: 100%;
   text-align: justify;
   border-radius: 25px;
-  justify-content: center;
+  
   overflow-x: hidden;
   overflow-y: auto;
 
@@ -242,15 +242,20 @@ h5 {
 
 }
 #deleteNote {
+  margin-top: 8px;
+  margin-right: 8px;
   float: right;
 }
 #editNote {
   float: right;
 }
 
-.h4 {
-  z-index: 99;
+/* new css for weekday titles*/
+#day-title {
+  font-size: 20px;
+  margin: 0;
 }
+
 
 /* For devices larger than 400px */
 @media (min-width: 400px) {
