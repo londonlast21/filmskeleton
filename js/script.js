@@ -16,13 +16,18 @@ var deletebtnNoteCounter = 0;
 // drag drop stuff
 const allowDrop = (event) => {
        event.preventDefault();
-    console.log("drop working");
+    console.log("allow drop working");
    }
 const onDragStart = (event) => {
     console.log("onDragStart");
+    event.dataTransfer.setData("text/plain", event.target.id);
+    
 }
 const onDrop = (event) => {
-    console.log("onDrop");
+    event.preventDefault();
+    console.log("onDrop is working");
+    var data = event.dataTransfer.getData("text/plain");
+    event.target.appendChild(document.getElementById(data));
 };
 
 
@@ -430,11 +435,7 @@ var dragIconHandler = function() {
     var iconId = event.target.getAttribute("icon-id");
     console.log("Icon ID:", iconId);
 
-    event.dataTransfer.setData("text/plain", iconID);
-
-    var getIconId = event.dataTransfer.getData("text/plain");
-    // check what is being stored
-    console.log("getIconId:", getIconId, typeof getIconId);
+    event.dataTransfer.setData("text/plain", event.target.iconId);
 
 }
 
@@ -444,24 +445,28 @@ var mediaImageHandler = function() {
     var mediaImageId = event.target.getAttribute("id");
     console.log("Image ID:", mediaImageId);
 
-    var getMediaImageID = event.dataTransfer.getData("text/plain");
-    //check whata is being stored
-    console.log("getMediaImageId:", getMediaImageId, typeof getMediaImageId);
+    event.dataTransfer.setData("text/plain", event.target.mediaImageId);
 }
 
 
 // listen for drag on icons
-document.getElementsByClassName("tooltip").onclick = function (event){
-    dragIconHandler();
-}
+// document.getElementsByClassName("tooltip").onclick = function (event){
+//     dragIconHandler();
+// }
 
 // listen for drag on dynamic images
-document.getElementsByClassName("titleImage").onclick = function (event){
-    mediaImageHandler();
-}
+//document.getElementsByClassName("titleImage").onclick = function (event){
+//     mediaImageHandler();
+// }
 
 // listen for drag on dynamic notes
-document.getElementsBy
+//document.getElementsBy
+
+// listen for drop on working on column
+
+// listen for drop on triggers column
+
+// listen for drop on days
 
 
 /// onclick to get data user's input from script in html tag
@@ -477,3 +482,4 @@ document.getElementById("saveNewEvent").onclick = function (event){
 
 window.addEventListener("dragstart", onDragStart);
 window.addEventListener("drop", onDrop);
+
