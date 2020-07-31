@@ -20,17 +20,19 @@ const allowDrop = (event) => {
    }
 const onDragStart = (event) => {
     console.log("onDragStart");
-    event.dataTransfer.setData("JSON", event.target);
     // test set data value
     console.log(event.target);
+    // set event.target as the value 
+    event.dataTransfer.setData('object', event.target);
+    
     
 }
 const onDrop = (event) => {
     event.preventDefault();
     console.log("onDrop is working");
-    var data = event.dataTransfer.getData("JSON");
+    var data = event.dataTransfer.getData('object');
     console.log(data);
-    
+
     event.target.appendChild(document.getElementById(data));
 };
 
