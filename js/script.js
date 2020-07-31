@@ -2,12 +2,11 @@ var easyInput = "";
 var mediaType = "";
 
 // labels for the working space areas
-var workingArea = document.getElementById("work-column");
-var triggerArea = document.getElementById("trigger-column");
+var workingArea = document.getElementById("bigColumn1");
+var triggerArea = document.getElementById("bigColumn2");
 var weekArea = document.getElementById("week-area");
 
 //api keys go here
-
 
 
 // stuff for notes
@@ -72,8 +71,8 @@ const onDragStart = (event) => {
 };
 const onDrop = (event) => {
   //event.preventDefault();
-  event.stopPropagation();
-  event.cancelBubble = true;
+  //event.stopPropagation();
+  //event.cancelBubble = true;
 
   console.log("onDrop is working");
   var data = event.dataTransfer.getData("object");
@@ -100,6 +99,7 @@ const onDrop = (event) => {
       document.getElementById("work-column").innerHTML
     );
 
+    /// start localstorage setting
     localStorage.setItem(
       "workingOnColumn",
       document.getElementById("bigColumn1").innerHTML
