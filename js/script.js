@@ -23,6 +23,7 @@ var loadPageData = function (event){
 var workingOnColumnData = localStorage.getItem("workingOnColumn");
 var triggerColumnData = localStorage.getItem("triggerColumn");
 var weekContainerData = localStorage.getItem("weekContainer");
+var iconBoxData = localStorage.getItem("")
 
 
 if ( loadPageData === null) {
@@ -32,7 +33,7 @@ if ( loadPageData === null) {
 }
 
 // add drag and drop capacity to elements
-document.querySelector("#")
+
 
 
 // drag and drop stuff
@@ -49,7 +50,7 @@ const onDragStart = (event) => {
     
     
 }
-const onDrop = (event) => {
+var onDrop = (event) => {
     event.preventDefault();
     console.log("onDrop is working");
     var data = event.dataTransfer.getData('object');
@@ -63,8 +64,24 @@ const onDrop = (event) => {
     localStorage.setItem("workingOnColumn", workingArea);
     localStorage.setItem("triggerColumn", triggerArea);
     localStorage.setItem("weekContainer", weekArea);
+    localStorage.setItem("iconsBox", icons-bank);
 
 };
+
+// function specifying that only icons can be dropped on icon bank
+const allowDropIcon = (event) => {
+    event.preventDefault();
+    console.log("iconBox drop working");
+    
+    if (!getElementByClassName == "tooltip"){
+        console.log("not an icon");
+    }
+    else {
+        // do not allow onDrop
+        onDrop();
+    }
+    
+}
 
 
 
