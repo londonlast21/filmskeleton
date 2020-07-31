@@ -71,14 +71,19 @@ var onDrop = (event) => {
 // function specifying that only icons can be dropped on icon bank
 const allowDropIcon = (event) => {
     event.preventDefault();
-    console.log("iconBox drop working");
     
-    if (!getElementByClassName == "tooltip"){
+    // check to see if its an icon
+    var isAnIcon = event.target.getElementByClassName;
+
+    if (!isAnIcon == "tooltip"){
         console.log("not an icon");
+        console.log("iconBox drop working");
     }
-    else {
+    else if (isAnIcon = "tooltip") {
         // do not allow onDrop
         onDrop();
+        console.log("is an icon");
+        console.log("iconBox drop working");
     }
     
 }
