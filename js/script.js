@@ -6,7 +6,11 @@ var mediaType ="";
 var workingArea = document.getElementById("work-column");
 var triggerArea = document.getElementById("trigger-column");
 var weekArea = document.getElementById("week-area"); 
+
 //api keys go here 
+var apikey = "b8918a77ef3da9c62a4dc045d9aa28ee";
+var apikey2 = "17609511-a8b61b70dbfc9bcb99ef972fb";
+
 
 
 // stuff for notes
@@ -46,15 +50,17 @@ const onDragStart = (event) => {
     // test set data value
     console.log(event.target);
     // set event.target as the value 
-    event.dataTransfer.setData('object', event.target);
+    event.dataTransfer.setData('object', event.target.id);
     
     
 }
-var onDrop = (event) => {
-    event.preventDefault();
+const onDrop = (event) => {
+    //event.preventDefault();
+    
+
     console.log("onDrop is working");
     var data = event.dataTransfer.getData('object');
-    console.log(data);
+    console.log(document.getElementById(data));
 
     event.target.appendChild(document.getElementById(data));
 
@@ -492,23 +498,23 @@ var getNoteInfo = function(event) {
 //     getResourceInfo();
 // }
 
-var dragIconHandler = function() {
-    /// set data so can be drag/dropped
-    var iconId = event.target.getAttribute("icon-id");
-    console.log("Icon ID:", iconId);
+// var dragIconHandler = function() {
+//     /// set data so can be drag/dropped
+//     var iconId = event.target.getAttribute("icon-id");
+//     console.log("Icon ID:", iconId);
 
-    event.dataTransfer.setData("text/plain", event.target.iconId);
+//     event.dataTransfer.setData("text/plain", event.target.iconId);
 
-}
+// }
 
-// save data from media image drag/drop
-var mediaImageHandler = function() {
-    // set data 
-    var mediaImageId = event.target.getAttribute("id");
-    console.log("Image ID:", mediaImageId);
+// // save data from media image drag/drop
+// var mediaImageHandler = function() {
+//     // set data 
+//     var mediaImageId = event.target.getAttribute("id");
+//     console.log("Image ID:", mediaImageId);
 
-    event.dataTransfer.setData("text/plain", event.target.mediaImageId);
-}
+//     event.dataTransfer.setData("text/plain", event.target.mediaImageId);
+// }
 
 
 // // listen for drag on icons
