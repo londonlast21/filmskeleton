@@ -20,13 +20,15 @@ const allowDrop = (event) => {
    }
 const onDragStart = (event) => {
     console.log("onDragStart");
-    event.dataTransfer.setData("text/plain", event.target.id);
+    event.dataTransfer.setData("text", event.target);
+    // test set data value
+    console.log(event.target);
     
 }
 const onDrop = (event) => {
     event.preventDefault();
     console.log("onDrop is working");
-    var data = event.dataTransfer.getData("text/plain");
+    var data = event.dataTransfer.getData("text");
     event.target.appendChild(document.getElementById(data));
 };
 
@@ -449,13 +451,13 @@ var mediaImageHandler = function() {
 }
 
 
-// listen for drag on icons
+// // listen for drag on icons
 // document.getElementsByClassName("tooltip").onclick = function (event){
 //     dragIconHandler();
 // }
 
 // listen for drag on dynamic images
-//document.getElementsByClassName("titleImage").onclick = function (event){
+// document.getElementsByClassName("titleImage").onclick = function (event){
 //     mediaImageHandler();
 // }
 

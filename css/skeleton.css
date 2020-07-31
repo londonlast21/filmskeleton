@@ -64,6 +64,9 @@
 }
 
 /* styling column widths */
+#bigColumn1, #bigColumn2 {
+  min-height: 130px;
+}
 
 
 /* styling resource section */
