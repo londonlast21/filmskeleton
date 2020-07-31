@@ -24,3 +24,8 @@ Use the 'Media Generator' to search for 'Film', 'Book', or 'General' images by s
 Create text-based notes using the Note Generator at the top of the 'Your Week' area.
 These notes can be dragged and dropped to any of the working areas on the page, except for the Icon Bank, to help keep track of appointments, events, etc.
 
+## Screenshot:
+
+## Link to App:
+[Trauma Recovery Dashboard](https://londonlast21.github.io/filmskeleton)
+
