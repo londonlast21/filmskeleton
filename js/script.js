@@ -1,6 +1,11 @@
 
 var easyInput = "";
 var mediaType ="";
+
+// labels for the working space areas
+var workingArea = document.getElementById("work-column");
+var triggerArea = document.getElementById("trigger-column");
+var weekArea = document.getElementById("week-area"); 
 //api keys go here 
 
 
@@ -14,10 +19,10 @@ var noteIdCounter = 0;
 var deletebtnNoteCounter = 0;
 
 // function to retain information on page load
-var loadPageData = { 
-localStorage.getItem("workingOnColumn");
-localStorage.getItem("triggerColumn");
-localStorage.getItem("weekContainer");
+function loadPageData = { 
+var workingOnColumnData = localStorage.getItem("workingOnColumn");
+var triggerColumnData = localStorage.getItem("triggerColumn");
+var weekContainerData = localStorage.getItem("weekContainer");
 
 
 if ( loadPageData === null) {
@@ -51,7 +56,7 @@ const onDrop = (event) => {
     // save all column positions to localStorage
     // function to set localStorage
 
-    localStorage.setItem("worringOnColumn", );
+    localStorage.setItem("workingOnColumn", );
     localStorage.setItem("triggerColumn", );
     localStorage.setItem("weekContainer", );
 

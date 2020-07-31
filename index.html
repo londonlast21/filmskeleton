@@ -37,7 +37,7 @@
   <!-- containers to hold working on snd trigger columns-->
   <div class="container">
     <div class="row">
-      <div class="one-half column">
+      <div id="work-column" class="one-half column">
         <h2>Working On:</h2> 
         <div id="bigColumn1" class="working-on" ondrop="drop(event)" onDragOver="allowDrop(event)">
         
@@ -49,7 +49,7 @@
 <!-- container for  my triggers-->
 
   <div class="row">
-    <div class="one-half column">
+    <div id="trigger-column" class="one-half column">
     <h2>My Triggers:</h2>
       <div id="bigColumn2" class="my-triggers" onDragOver="allowDrop(event)">
       </br>
@@ -211,7 +211,7 @@
         </br>
 
         <!-- week day boxes start -->
-        <div class="weekContainer">
+        <div id="week-area" class="weekContainer">
           <div class="scheduleDay" ondrop="drop(event)" onDragOver="allowDrop(event)">
             <p>Monday</p>
           </div>
