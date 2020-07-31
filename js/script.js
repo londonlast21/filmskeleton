@@ -13,6 +13,19 @@ var mediaIdCounter = 0;
 var noteIdCounter = 0;
 var deletebtnNoteCounter = 0;
 
+// function to retain information on page load
+var loadPageData = { 
+localStorage.getItem("workingOnColumn");
+localStorage.getItem("triggerColumn");
+localStorage.getItem("weekContainer");
+
+
+if ( loadPageData === null) {
+    console.log("No saved data");
+
+};
+}
+
 // drag drop stuff
 const allowDrop = (event) => {
        event.preventDefault();
@@ -34,7 +47,17 @@ const onDrop = (event) => {
     console.log(data);
 
     event.target.appendChild(document.getElementById(data));
+
+    // save all column positions to localStorage
+    // function to set localStorage
+
+    localStorage.setItem("worringOnColumn", );
+    localStorage.setItem("triggerColumn", );
+    localStorage.setItem("weekContainer", );
+
 };
+
+
 
 
 // api call to generate image
@@ -488,4 +511,5 @@ document.getElementById("saveNewEvent").onclick = function (event){
 
 window.addEventListener("dragstart", onDragStart);
 window.addEventListener("drop", onDrop);
+window.addEventListener("load", loadPageData);
 
