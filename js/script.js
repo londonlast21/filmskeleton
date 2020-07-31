@@ -9,9 +9,9 @@ var weekArea = document.getElementById("week-area");
 //api keys go here 
 
 
-
+// stuff for notes
 var deleteNote = document.querySelector("delete-note");
-var editNote = document.querySelector("edit-note");
+//var editNote = document.querySelector("edit-note");
 
 // counters
 var mediaIdCounter = 0;
@@ -19,7 +19,7 @@ var noteIdCounter = 0;
 var deletebtnNoteCounter = 0;
 
 // function to retain information on page load
-function loadPageData = { 
+var loadPageData = function (event){ 
 var workingOnColumnData = localStorage.getItem("workingOnColumn");
 var triggerColumnData = localStorage.getItem("triggerColumn");
 var weekContainerData = localStorage.getItem("weekContainer");
@@ -31,9 +31,13 @@ if ( loadPageData === null) {
 };
 }
 
-// drag drop stuff
+// add drag and drop capacity to elements
+document.querySelector("#")
+
+
+// drag and drop stuff
 const allowDrop = (event) => {
-       event.preventDefault();
+    event.preventDefault();
     console.log("allow drop working");
    }
 const onDragStart = (event) => {
@@ -56,11 +60,13 @@ const onDrop = (event) => {
     // save all column positions to localStorage
     // function to set localStorage
 
-    localStorage.setItem("workingOnColumn", );
-    localStorage.setItem("triggerColumn", );
-    localStorage.setItem("weekContainer", );
+    localStorage.setItem("workingOnColumn", workingArea);
+    localStorage.setItem("triggerColumn", triggerArea);
+    localStorage.setItem("weekContainer", weekArea);
 
 };
+
+
 
 
 
