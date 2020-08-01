@@ -9,6 +9,7 @@ var weekArea = document.getElementById("week-area");
 //api keys go here
 
 
+
 // stuff for notes
 var deleteNote = document.querySelector("delete-note");
 //var editNote = document.querySelector("edit-note");
@@ -155,7 +156,7 @@ const allowDropIcon = (event) => {
     console.log("not an icon");
     console.log("iconBox drop working");
   } else {
-    // do not allow onDrop
+    // do allow onDrop
     onDrop(event);
     console.log("is an icon");
     console.log("iconBox drop working");

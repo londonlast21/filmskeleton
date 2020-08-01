@@ -144,7 +144,7 @@ h5 {
 /* styling for hover effect over the icons */
 .material-icons {
   padding: 8px;
-  margin: 5px;
+  margin: 10px;
   width: 20px;
   
 }
@@ -186,10 +186,14 @@ h5 {
 }
 
 /* styling for mediasearch returns */
-#titleImage {
+.titleImage {
   height: fit-content;
-  width: 100%;
-  ;
+  max-width: fit-content;
+  margin: 8px;
+  border: black solid;
+  background-color: navajowhite;
+  display: inline-grid;
+  
 }
 #media-search {
   width: 45%;
