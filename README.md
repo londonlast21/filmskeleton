@@ -5,7 +5,7 @@ Framework by Skeleton
 Icons by GoogleIcons
 
 ## API Used
-"This product uses the TMDb API but is not endorsed or certified by TMDb." needs official logo as well
+"This product uses the TMDb API but is not endorsed or certified by TMDb."![TMDB logo](/images/tmdb.png)
 
 Google Books APi
 
