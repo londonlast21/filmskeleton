@@ -29,7 +29,6 @@ var loadPageData = function (event) {
 
 
   var mondayData = localStorage.getItem("mondayInfo");
-  
   var tuesdayData = localStorage.getItem("tuesdayInfo");
   var wednesdayData = localStorage.getItem("wednesdayInfo");
   var thursdayData = localStorage.getItem("thursdayInfo");
@@ -57,8 +56,6 @@ var loadPageData = function (event) {
 };
 
 // add drag and drop capacity to elements
-
-// drag and drop stuff
 const allowDrop = (event) => {
   event.preventDefault();
   console.log("allow drop working");
