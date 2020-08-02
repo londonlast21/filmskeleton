@@ -1,19 +1,5 @@
 # Trauma Recovery Dashboard
 
-## CSS:
-Framework by Skeleton</br>
-Icons by GoogleIcons
-
-## API Used
-"This product uses the TMDb API but is not endorsed or certified by TMDb."
-</br><img src="./images/tmdb.png" width="60"/>
-
-Google Books APi</br>
-<img src="images/poweredby.png">
-
-Pixabay API: [link](https://pixabay.com/)
-<img src="images/pixabay.png" width="60">
-
 ## Instructions:
 
 ### Create a plan for your recovery from trauma!
@@ -36,4 +22,18 @@ If you refresh the page, or leave and return, you can delete old notes & images 
 
 ## Link to App:
 [Trauma Recovery Dashboard](https://londonlast21.github.io/filmskeleton)
+
+## CSS:
+Framework by Skeleton</br>
+Icons by GoogleIcons
+
+## API Used
+"This product uses the TMDb API but is not endorsed or certified by TMDb."
+</br><img src="./images/tmdb.png" width="60"/>
+
+Google Books APi</br>
+<img src="images/poweredby.png">
+
+Pixabay API: [link](https://pixabay.com/)
+<img src="images/pixabay.png" width="60">
 
