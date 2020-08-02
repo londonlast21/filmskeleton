@@ -11,7 +11,7 @@ Icons by GoogleIcons
 Google Books APi</br>
 <img src="images/poweredby.png">
 
-Pixabay API: [link] (https://pixabay.com/)
+Pixabay API: [link](https://pixabay.com/)
 <img src="images/pixabay.png" width="60">
 
 ## Instructions:
