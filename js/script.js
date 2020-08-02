@@ -9,7 +9,6 @@ var weekArea = document.getElementById("week-area");
 //api keys go here
 
 
-
 // stuff for notes
 var deleteNote = document.querySelector("delete-note");
 //var editNote = document.querySelector("edit-note");
@@ -237,7 +236,7 @@ var getMedia = function (easyInput, mediaType) {
         var titleImage = document.createElement("div");
         titleImage.className = "titleImage";
         titleImage.id = "titleImage";
-        titleImage.setAttribute = ("draggable", true)
+        titleImage.setAttribute("draggable", true)
         titleImage.setAttribute("book-id", mediaIdCounter);
         document.getElementById("mediaImage").appendChild(titleImage);
 
