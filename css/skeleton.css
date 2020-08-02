@@ -204,6 +204,9 @@ h5 {
   max-width: 100px;
   
 }
+#apiLogo {
+  margin-right: 300px;
+}
 .delete-movie{
   background-color: white;
 }
