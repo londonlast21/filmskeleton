@@ -1,7 +1,7 @@
 # Trauma Recovery Dashboard
 
 ## CSS:
-Framework by Skeleton
+Framework by Skeleton</br>
 Icons by GoogleIcons
 
 ## API Used
