@@ -19,6 +19,9 @@ var mediaIdCounter = 0;
 var noteIdCounter = 0;
 var deletebtnNoteCounter = 0;
 
+// function on page load to remove delete buttons from anything existing on page
+
+
 //function to retain information on page load
 var loadPageData = function (event) {
   var workingOnColumnData = localStorage.getItem("workingOnColumn");
@@ -29,6 +32,7 @@ var loadPageData = function (event) {
 
 
   var mondayData = localStorage.getItem("mondayInfo");
+
   var tuesdayData = localStorage.getItem("tuesdayInfo");
   var wednesdayData = localStorage.getItem("wednesdayInfo");
   var thursdayData = localStorage.getItem("thursdayInfo");
@@ -102,6 +106,7 @@ const onDrop = (event) => {
       "workingOnColumn",
       document.getElementById("bigColumn1").innerHTML
     );
+    
     localStorage.setItem(
         "triggerColumn", 
         document.getElementById("bigColumn2").innerHTML
