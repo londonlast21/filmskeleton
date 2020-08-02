@@ -18,8 +18,26 @@ var mediaIdCounter = 0;
 var noteIdCounter = 0;
 var deletebtnNoteCounter = 0;
 
-// function on page load to remove delete buttons from anything existing on page
+// function to make page scroll
+var clicked = false, clickY;
+$(document).on({
+    'mousemove': function(e) {
+        clicked && updateScrollPos(e);
+    },
+    'mousedown': function(e) {
+        clicked = true;
+        clickY = e.pageY;
+    },
+    'mouseup': function() {
+        clicked = false;
+        $('html').css('cursor', 'auto');
+    }
+});
 
+var updateScrollPos = function(e) {
+    $('html').css('cursor', 'row-resize');
+    $(window).scrollTop($(window).scrollTop() + (clickY - e.pageY));
+}
 
 //function to retain information on page load
 var loadPageData = function (event) {

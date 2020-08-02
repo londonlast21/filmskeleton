@@ -241,11 +241,12 @@ h5 {
 .scheduleEvent {
   width: 90%;
   text-align: center;
-  height: 55px;
+  height: 50px;
   background-color: white;
   margin: auto;
   margin-top: 5px;
   margin-bottom: 5px;
+  border-radius: 40px;
 
 }
 #deleteNote {
