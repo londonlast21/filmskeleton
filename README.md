@@ -8,7 +8,8 @@ Icons by GoogleIcons
 "This product uses the TMDb API but is not endorsed or certified by TMDb."
 </br><img src="./images/tmdb.png" width="60"/>
 
-Google Books APi
+Google Books APi</br>
+<img src="images/poweredby.png">
 
 pixabay api logo and link https://pixabay.com/api/
 
